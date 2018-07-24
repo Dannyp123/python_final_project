@@ -5,9 +5,6 @@ import core
 def main():
     inventory_raw_info = disk.open_file('inventory.txt')
     inventory_dictionary = core.create_inventory_dictionary(inventory_raw_info)
-    # with open('inventory.txt') as file:
-    #     file.readlines()
-    #     file_information = file.readlines()
 
     print("Welcome to Daniel's Tool Rental!")
 
