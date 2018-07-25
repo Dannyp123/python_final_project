@@ -1,0 +1,1 @@
+{'1': {'name': 'Hammer', 'stock': 13, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 18, 'rental cost': 20, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 20, 'replacement cost': 25}}
