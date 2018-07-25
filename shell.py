@@ -2,7 +2,9 @@ import disk
 import core
 
 
-def inventory_dictionary():
+def main():
+    # inventory_raw_info = disk.open_file('inventory.txt')
+    # inventory_dictionary = core.create_inventory_dictionary(inventory_raw_info)
     inventory = {
         '1': {
             'name': 'Hammer',
@@ -24,31 +26,6 @@ def inventory_dictionary():
         }
     }
 
-    return inventory
-
-
-def inventory_helper(inventory):
-    print(
-        inventory['1']['name'],
-        inventory['1']['stock'],
-        inventory['1']['rental cost'],
-        inventory['1']['replacement cost'],
-        inventory['2']['name'],
-        inventory['2']['stock'],
-        inventory['2']['rental cost'],
-        inventory['2']['replacement cost'],
-        inventory['3']['name'],
-        inventory['3']['stock'],
-        inventory['3']['rental cost'],
-        inventory['3']['replacement cost'],
-    )
-
-
-def main():
-    # inventory_raw_info = disk.open_file('inventory.txt')
-    # inventory_dictionary = core.create_inventory_dictionary(inventory_raw_info)
-    inventory = inventory_dictionary
-
     print("Welcome to Daniel's Tool Rental!")
 
     name = input("What is the name for this rental? ")
@@ -60,9 +37,35 @@ def main():
             help = input("Would you like to rent a Tool or see our inventory? "
                          ).strip()
         if help in ['See our inventory', 'see our inventory']:
-            inventory_helper(inventory)
+            print(
+                inventory['1']['name'],
+                inventory['1']['stock'],
+                inventory['1']['rental cost'],
+                inventory['1']['replacement cost'],
+                inventory['2']['name'],
+                inventory['2']['stock'],
+                inventory['2']['rental cost'],
+                inventory['2']['replacement cost'],
+                inventory['3']['name'],
+                inventory['3']['stock'],
+                inventory['3']['rental cost'],
+                inventory['3']['replacement cost'],
+            )
         if help in ['rent', 'rent a tool', 'rent a Tool']:
-            inventory_helper(inventory)
+            print(
+                inventory['1']['name'],
+                inventory['1']['stock'],
+                inventory['1']['rental cost'],
+                inventory['1']['replacement cost'],
+                inventory['2']['name'],
+                inventory['2']['stock'],
+                inventory['2']['rental cost'],
+                inventory['2']['replacement cost'],
+                inventory['3']['name'],
+                inventory['3']['stock'],
+                inventory['3']['rental cost'],
+                inventory['3']['replacement cost'],
+            )
 
             tool = input('OK, what tool would you like to rent? ').strip()
             if tool in ['Hammer', 'hammer']:
