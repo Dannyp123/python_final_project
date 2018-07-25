@@ -59,7 +59,7 @@ def main():
             )
         if help in ['rent', 'rent a tool', 'rent a Tool', 'rent']:
             print(
-                'Choose of tools:',
+                'Here is our inventory:',
                 inventory['1']['name'],
                 inventory['2']['name'],
                 inventory['3']['name'],
@@ -69,19 +69,19 @@ def main():
             tool = input('OK, what tool would you like to rent? ').strip()
             if tool in ['Hammer', 'hammer']:
                 inventory['1']['stock'] -= 1
-                print('Rental Cost for', tool, 'is $ 24.0')
+                print('In-stock: ', inventory['1']['stock'])
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
-                print('Rental Cost for', tool, 'is $ 55.0')
+                print('In-stock: ', inventory['2']['stock'])
 
             elif tool in ['Saw', 'saw']:
                 inventory['3']['stock'] -= 1
-                print('Rental Cost for', tool, 'is $ 15.0')
+                print('In-stock: ', inventory['3']['stock'])
 
             elif tool in ['Screwdriver', 'screwdriver']:
                 inventory['4']['stock'] -= 1
-                print('Rental Cost for', tool, 'is $ 20.0')
+                print('In-stock: ', inventory['4']['stock'])
 
     # renting_tool = inventory[tool]
     # renting_tool['In-stock'] -= 1
