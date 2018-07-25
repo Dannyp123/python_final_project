@@ -8,21 +8,27 @@ def main():
     inventory = {
         '1': {
             'name': 'Hammer',
-            'stock': '17',
-            'rental cost': '24',
-            'replacement cost': '34'
+            'stock': 17,
+            'rental cost': 24,
+            'replacement cost': 34
         },
         '2': {
             'name': 'Drill',
-            'stock': '10',
-            'rental cost': '55',
-            'replacement cost': '100'
+            'stock': 10,
+            'rental cost': 55,
+            'replacement cost': 100
         },
         '3': {
             'name': 'Saw',
-            'stock': '18',
-            'rental cost': '20',
-            'replacement cost': '25'
+            'stock': 18,
+            'rental cost': 20,
+            'replacement cost': 25
+        },
+        '4': {
+            'name': 'Screwdriver',
+            'stock': 18,
+            'rental cost': 20,
+            'replacement cost': 25
         }
     }
 
@@ -41,46 +47,40 @@ def main():
                 'Inventory', 'inventory'
         ]:
             print(
+                'Choose of tools:',
                 inventory['1']['name'],
-                inventory['1']['stock'],
-                inventory['1']['rental cost'],
-                inventory['1']['replacement cost'],
                 inventory['2']['name'],
-                inventory['2']['stock'],
-                inventory['2']['rental cost'],
-                inventory['2']['replacement cost'],
                 inventory['3']['name'],
-                inventory['3']['stock'],
-                inventory['3']['rental cost'],
-                inventory['3']['replacement cost'],
+                inventory['4']['name'],
             )
         if help in ['rent', 'rent a tool', 'rent a Tool', 'rent']:
             print(
+                'Choose of tools:',
                 inventory['1']['name'],
-                inventory['1']['stock'],
-                inventory['1']['rental cost'],
-                inventory['1']['replacement cost'],
                 inventory['2']['name'],
-                inventory['2']['stock'],
-                inventory['2']['rental cost'],
-                inventory['2']['replacement cost'],
                 inventory['3']['name'],
-                inventory['3']['stock'],
-                inventory['3']['rental cost'],
-                inventory['3']['replacement cost'],
+                inventory['4']['name'],
             )
 
             tool = input(
                 'OK, what tool would you like to rent, or quit? ').strip()
             if tool in ['Hammer', 'hammer']:
+                inventory['1']['stock'] -= 1
                 print('Rental Cost for', tool, 'is $ 24.0')
+
             elif tool in ['Quit', 'quit']:
                 exit()
+
             elif tool in ['Drill', 'drill']:
+                inventory['2']['stock'] -= 1
                 print('Rental Cost for', tool, 'is $ 55.0')
+
             elif tool in ['Saw', 'saw']:
+                inventory['3']['stock'] -= 1
                 print('Rental Cost for', tool, 'is $ 15.0')
+
             elif tool in ['Screwdriver', 'screwdriver']:
+                inventory['4']['stock'] -= 1
                 print('Rental Cost for', tool, 'is $ 20.0')
 
     # renting_tool = inventory[tool]
