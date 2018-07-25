@@ -40,8 +40,12 @@ def main():
         if who_are_you == 'Employee':
             print('Checking the inventory!')
         elif who_are_you == 'Customer':
-            help = input("Would you like to rent a Tool or see our inventory? "
-                         ).strip()
+            help = input(
+                "Would you like to rent a Tool , see our inventory, or quit? "
+            ).strip()
+            if help in ['Quit', 'quit']:
+                exit()
+
         if help in [
                 'See our inventory', 'see our inventory', 'see inventory',
                 'Inventory', 'inventory'
@@ -62,14 +66,10 @@ def main():
                 inventory['4']['name'],
             )
 
-            tool = input(
-                'OK, what tool would you like to rent, or quit? ').strip()
+            tool = input('OK, what tool would you like to rent? ').strip()
             if tool in ['Hammer', 'hammer']:
                 inventory['1']['stock'] -= 1
                 print('Rental Cost for', tool, 'is $ 24.0')
-
-            elif tool in ['Quit', 'quit']:
-                exit()
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
