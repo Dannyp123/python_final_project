@@ -1,6 +1,15 @@
 import disk
 import core
 
+# inventory['1']['name'],
+# inventory['1']['stock'],
+# inventory['2']['name'],
+# inventory['2']['stock'],
+# inventory['3']['name'],
+# inventory['3']['stock'],
+# inventory['4']['name'],
+# inventory['4']['stock'],
+
 
 def main():
     # inventory_raw_info = disk.open_file('inventory.txt')
@@ -44,7 +53,7 @@ def main():
                 "Would you like to rent a Tool , see our inventory, or quit? "
             ).strip()
             if help in ['Quit', 'quit']:
-                exit()
+                break
 
         if help in [
                 'See our inventory', 'see our inventory', 'see inventory',
@@ -69,22 +78,26 @@ def main():
             tool = input('OK, what tool would you like to rent? ').strip()
             if tool in ['Hammer', 'hammer']:
                 inventory['1']['stock'] -= 1
+                print(tool, 'has a rental cost of $ 24.0')
                 print('In-stock: ', inventory['1']['stock'])
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
+                print(tool, 'has a rental cost of $ 55.0')
                 print('In-stock: ', inventory['2']['stock'])
 
             elif tool in ['Saw', 'saw']:
                 inventory['3']['stock'] -= 1
+                print(tool, 'has a rental cost of $ 15.0')
                 print('In-stock: ', inventory['3']['stock'])
 
             elif tool in ['Screwdriver', 'screwdriver']:
                 inventory['4']['stock'] -= 1
+                print(tool, 'has a rental cost of $ 20.0')
                 print('In-stock: ', inventory['4']['stock'])
 
-    # renting_tool = inventory[tool]
-    # renting_tool['In-stock'] -= 1
+    with open('history.txt', 'a') as file:
+        file.write(str(inventory))
 
 
 if __name__ == '__main__':
