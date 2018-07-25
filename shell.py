@@ -1,54 +1,53 @@
 import disk
 import core
 
-# def inventory_dictionary():
-inventory = {
-    1: {
-        'name': 'Hammer',
-        'stock': 17,
-        'rental cost': 24,
-        'replacement cost': 34
-    },
-    2: {
-        'name': 'Drill',
-        'stock': 10,
-        'rental cost': 55,
-        'replacement cost': 100
-    },
-    3: {
-        'name': 'Saw',
-        'stock': 18,
-        'rental cost': 20,
-        'replacement cost': 25
-    }
-}
 
-# return inventory
+def inventory_dictionary():
+    inventory = {
+        '1': {
+            'name': 'Hammer',
+            'stock': '17',
+            'rental cost': '24',
+            'replacement cost': '34'
+        },
+        '2': {
+            'name': 'Drill',
+            'stock': '10',
+            'rental cost': '55',
+            'replacement cost': '100'
+        },
+        '3': {
+            'name': 'Saw',
+            'stock': '18',
+            'rental cost': '20',
+            'replacement cost': '25'
+        }
+    }
+
+    return inventory
+
+
+def inventory_helper(inventory):
+    print(
+        inventory['1']['name'],
+        inventory['1']['stock'],
+        inventory['1']['rental cost'],
+        inventory['1']['replacement cost'],
+        inventory['2']['name'],
+        inventory['2']['stock'],
+        inventory['2']['rental cost'],
+        inventory['2']['replacement cost'],
+        inventory['3']['name'],
+        inventory['3']['stock'],
+        inventory['3']['rental cost'],
+        inventory['3']['replacement cost'],
+    )
 
 
 def main():
     # inventory_raw_info = disk.open_file('inventory.txt')
     # inventory_dictionary = core.create_inventory_dictionary(inventory_raw_info)
-    inventory = {
-        '1': {
-            'name': 'Hammer',
-            'stock': 17,
-            'rental cost': 24,
-            'replacement cost': 34
-        },
-        '2': {
-            'name': 'Drill',
-            'stock': 10,
-            'rental cost': 55,
-            'replacement cost': 100
-        },
-        '3': {
-            'name': 'Saw',
-            'stock': 18,
-            'rental cost': 20,
-            'replacement cost': 25
-        }
-    }
+    inventory = inventory_dictionary
 
     print("Welcome to Daniel's Tool Rental!")
 
@@ -61,13 +60,9 @@ def main():
             help = input("Would you like to rent a Tool or see our inventory? "
                          ).strip()
         if help in ['See our inventory', 'see our inventory']:
-            print(inventory[1]['name'])
+            inventory_helper(inventory)
         if help in ['rent', 'rent a tool', 'rent a Tool']:
-            print(
-                inventory['1']['name'],
-                inventory['2']['name'],
-                inventory['3']['name'],
-            )
+            inventory_helper(inventory)
 
             tool = input('OK, what tool would you like to rent? ').strip()
             if tool in ['Hammer', 'hammer']:
