@@ -2,6 +2,19 @@ import disk
 import core
 
 
+def rental(rental_rate, inventory):
+    if rental_rate == '1':
+        print('Rental Fee: ', '$', inventory['1']['rental cost'])
+    if rental_rate == '2':
+        print('Rental Fee: ', '$', inventory['1']['rental cost'] * 2)
+    if rental_rate == '3':
+        print('Rental Fee: ', '$', inventory['1']['rental cost'] * 3)
+    if rental_rate == '4':
+        print('Rental Fee: ', '$', inventory['1']['rental cost'] * 4)
+    if rental_rate == '5':
+        print('Rental Fee: ', '$', inventory['1']['rental cost'] * 5)
+
+
 def main():
     # inventory_raw_info = disk.open_file('inventory.txt')
     # inventory_dictionary = core.create_inventory_dictionary(inventory_raw_info)
@@ -84,16 +97,7 @@ def main():
 
             if tool in ['Hammer', 'hammer']:
                 inventory['1']['stock'] -= 1
-                if rental_rate == '1':
-                    print('Rental Fee: ', inventory['1']['rental cost'])
-                if rental_rate == '2':
-                    print('Rental Fee: ', inventory['1']['rental cost'] * 2)
-                if rental_rate == '3':
-                    print('Rental Fee: ', inventory['1']['rental cost'] * 3)
-                if rental_rate == '4':
-                    print('Rental Fee: ', inventory['1']['rental cost'] * 4)
-                if rental_rate == '5':
-                    print('Rental Fee: ', inventory['1']['rental cost'] * 5)
+                rental(rental_rate, inventory)
 
                 print()
                 print(tool, 'has a rental cost of $ 24.0 plus tax.')
@@ -105,6 +109,8 @@ def main():
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
+                rental(rental_rate, inventory)
+
                 print()
                 print(tool, 'has a rental cost of $ 55.0 plus tax.')
                 print()
@@ -115,6 +121,8 @@ def main():
 
             elif tool in ['Saw', 'saw']:
                 inventory['3']['stock'] -= 1
+                rental(rental_rate, inventory)
+
                 print()
                 print(tool, 'has a rental cost of $ 15.0 plus tax.')
                 print()
@@ -126,6 +134,8 @@ def main():
 
             elif tool in ['Screwdriver', 'screwdriver']:
                 inventory['4']['stock'] -= 1
+                rental(rental_rate, inventory)
+
                 print()
                 print(tool, 'has a rental cost of $ 20.0 plus tax.')
                 print()
