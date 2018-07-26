@@ -21,14 +21,14 @@ def main():
         '3': {
             'name': 'Chop-Saw',
             'stock': 5,
-            'rental cost': 15,
-            'replacement cost': 25
+            'rental cost': 45,
+            'replacement cost': 95
         },
         '4': {
-            'name': 'Screwdriver',
+            'name': 'Screwdriver Set',
             'stock': 18,
             'rental cost': 5,
-            'replacement cost': 10
+            'replacement cost': 16
         }
     }
 
@@ -91,7 +91,7 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['1']['rental cost'] * 5)
 
-                print('''Total: {}\n Replacement Deposit: {}'''.format(
+                print('''Total: ${}\nReplacement Deposit: ${}'''.format(
                     inventory['1']['rental cost'] * 1.07,
                     round(inventory['1']['replacement cost'] * 0.10, 4)))
 
@@ -118,7 +118,7 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['2']['rental cost'] * 5)
 
-                print('''Total: {}\n Replacement Deposit: {}'''.format(
+                print('''Total: ${}\nReplacement Deposit: ${}'''.format(
                     inventory['2']['rental cost'] * 1.07,
                     round(inventory['2']['replacement cost'] * 0.10, 4)))
 
@@ -144,7 +144,7 @@ def main():
                 if rental_rate == '5':
                     print('Rental Fee: ', '$',
                           inventory['3']['rental cost'] * 5)
-                print('''Total: {}\n Replacement Deposit: {}'''.format(
+                print('''Total: ${}\nReplacement Deposit: ${}'''.format(
                     round(inventory['3']['rental cost'] * 1.07, 3),
                     round(inventory['3']['replacement cost'] * 0.10, 4)))
 
@@ -171,7 +171,7 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['4']['rental cost'] * 5)
 
-                print('''Total: {}\n Replacement Deposit: {}'''.format(
+                print('''Total: ${}\nReplacement Deposit: ${}'''.format(
                     round(inventory['4']['rental cost'] * 1.07, 3),
                     round(inventory['4']['replacement cost'] * 0.10, 4)))
 
@@ -183,21 +183,35 @@ def main():
                     inventory['1']['stock'] += 1
 
                     print('In-Stock: ', inventory['1']['stock'])
+                    print('Here is your refund for returning item(s)', '$',
+                          round(inventory['1']['replacement cost'] * 0.10, 4))
 
                 elif what_tool in ['Drill', 'drill']:
                     inventory['2']['stock'] += 1
 
                     print('In-Stock: ', inventory['2']['stock'])
+                    print('Here is your refund for returning item(s)', '$',
+                          round(inventory['2']['replacement cost'] * 0.10, 4))
 
-                elif what_tool in ['Chop-Saw', 'chop-saw']:
+                elif what_tool in [
+                        'Chop-Saw', 'Chop saw', 'Chop Saw', 'chop-saw',
+                        'chopsaw', 'chop saw'
+                ]:
                     inventory['3']['stock'] += 1
-                    print('In-Stock: ', inventory['3']['stock'])
 
-                elif what_tool in ['Screwdriver', 'screwdriver']:
+                    print('In-Stock: ', inventory['3']['stock'])
+                    print('Here is your refund for returning item(s)', '$',
+                          round(inventory['3']['replacement cost'] * 0.10, 4))
+
+                elif what_tool in [
+                        'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
+                ]:
                     inventory['4']['stock'] += 1
                     print('In-Stock: ', inventory['4']['stock'])
+                    print('Here is your refund for returning item(s)', '$',
+                          round(inventory['4']['replacement cost'] * 0.10, 4))
 
-                print('Thank You for returning', tool)
+                print('Thank You for returning your tool!')
 
     with open('history.txt', 'a') as file:
         file.write('\n' + str(inventory) + '\n')
