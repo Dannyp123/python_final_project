@@ -105,7 +105,8 @@ def main():
                 print('In-stock: ', inventory['1']['stock'])
                 print()
                 print('''Total: {}'''.format(
-                    inventory['1']['rental cost'] * 1.07))
+                    inventory['1']['rental cost'] * 1.07,
+                    rental(rental_rate, inventory)))
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
