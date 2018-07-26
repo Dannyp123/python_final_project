@@ -19,7 +19,7 @@ def main():
             'replacement cost': 100
         },
         '3': {
-            'name': 'Saw',
+            'name': 'Chop-Saw',
             'stock': 5,
             'rental cost': 15,
             'replacement cost': 25
@@ -35,6 +35,7 @@ def main():
     print("Welcome to Daniel's Tool Rental!")
 
     name = input("What is the name for this rental? ")
+
     who_are_you = input("Are you a Employee or a Customer? ").strip().title()
     while True:
         if who_are_you == 'Employee':
@@ -42,23 +43,12 @@ def main():
             break
 
         elif who_are_you == 'Customer':
-            help = input(
-                "Would you like to rent a Tool , see our inventory, or quit? "
-            ).strip()
+
+            help = input("Would you like to rent a Tool or quit? ").strip()
+            print('must return with-in 5 days!')
             if help in ['Quit', 'quit']:
                 break
 
-            if help in [
-                    'See our inventory', 'see our inventory', 'see inventory',
-                    'Inventory', 'inventory'
-            ]:
-                print(
-                    'Choose of tools:',
-                    inventory['1']['name'],
-                    inventory['2']['name'],
-                    inventory['3']['name'],
-                    inventory['4']['name'],
-                )
             if help in ['rent', 'rent a tool', 'rent a Tool', 'rent']:
                 print()
                 print(
@@ -71,17 +61,8 @@ def main():
 
             tool = input('OK, what tool would you like to rent? ').strip()
 
-            # if inventory['1']['stock'] > 0:
-            #     print('Currently out of', tool + 's')
-            # elif inventory['2']['stock'] > 0:** Max of Five days**
-            #     print('Currently out of', tool + 's')
-            # elif inventory['3']['stock'] > 0:
-            #     print('Currently out of', tool + 's')
-            # elif inventory['4']['stock'] > 0:
-            #     print('Currently out of', tool + 's')
             rental_rate = input(
                 'How many days do you want to rent a tool for? ')
-            print('** rents are a max of Five days**')
 
             if tool in ['Hammer', 'hammer']:
                 inventory['1']['stock'] -= 1
@@ -139,7 +120,7 @@ def main():
                 print('''Total: {}'''.format(
                     inventory['2']['rental cost'] * 1.07))
 
-            elif tool in ['Saw', 'saw']:
+            elif tool in ['Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw']:
                 inventory['3']['stock'] -= 1
 
                 print()
@@ -189,6 +170,30 @@ def main():
 
                 print('''Total: {}'''.format(
                     round(inventory['4']['rental cost'] * 1.07, 3)))
+
+            returning = input('Are you returning a tool? ').strip()
+
+            if returning == 'yes':
+                what_tool = input('What tool(s) did you have? ')
+                if what_tool in ['Hammer', 'hammer']:
+                    inventory['1']['stock'] += 1
+
+                    print('In-Stock: ', inventory['1']['stock'])
+
+                elif what_tool in ['Drill', 'drill']:
+                    inventory['2']['stock'] += 1
+
+                    print('In-Stock: ', inventory['2']['stock'])
+
+                elif what_tool in ['Chop-Saw', 'chop-saw']:
+                    inventory['3']['stock'] += 1
+                    print('In-Stock: ', inventory['3']['stock'])
+
+                elif what_tool in ['Screwdriver', 'screwdriver']:
+                    inventory['4']['stock'] += 1
+                    print('In-Stock: ', inventory['4']['stock'])
+
+                print('Thank You for returning, have a blessed day!')
 
     with open('history.txt', 'a') as file:
         file.write('\n' + str(inventory) + '\n')
