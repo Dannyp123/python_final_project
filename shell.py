@@ -36,11 +36,28 @@ def main():
 
     name = input("What is the name for this rental? ")
 
-    who_are_you = input("Are you a Employee or a Customer? ").strip().title()
+    who_are_you = input("Are you a Employee or a Customer?").strip().title()
     while True:
         if who_are_you == 'Employee':
-            print('Checking the inventory!')
-            break
+            print('How you doing', name)
+            employee = input('Would you like to see the inventory')
+            if employee == 'yes':
+                print(
+                    inventory['1']['name'],
+                    inventory['1']['stock'],
+                    inventory['1']['rental cost'],
+                    inventory['1']['replacement cost'],
+                    inventory['3']['name'],
+                    inventory['3']['stock'],
+                    inventory['3']['rental cost'],
+                    inventory['3']['replacement cost'],
+                    inventory['4']['name'],
+                    inventory['4']['stock'],
+                    inventory['4']['rental cost'],
+                    inventory['4']['replacement cost'],
+                )
+            if employee == 'no':
+                break
 
         elif who_are_you == 'Customer':
 
