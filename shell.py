@@ -91,8 +91,9 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['1']['rental cost'] * 5)
 
-                print('''Total: {}'''.format(
-                    inventory['1']['rental cost'] * 1.07))
+                print('''Total: {}\n Replacement Deposit: {}'''.format(
+                    inventory['1']['rental cost'] * 1.07,
+                    round(inventory['1']['replacement cost'] * 0.10, 4)))
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
@@ -117,8 +118,9 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['2']['rental cost'] * 5)
 
-                print('''Total: {}'''.format(
-                    inventory['2']['rental cost'] * 1.07))
+                print('''Total: {}\n Replacement Deposit: {}'''.format(
+                    inventory['2']['rental cost'] * 1.07,
+                    round(inventory['2']['replacement cost'] * 0.10, 4)))
 
             elif tool in ['Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw']:
                 inventory['3']['stock'] -= 1
@@ -142,8 +144,9 @@ def main():
                 if rental_rate == '5':
                     print('Rental Fee: ', '$',
                           inventory['3']['rental cost'] * 5)
-                print('''Total: {}'''.format(
-                    round(inventory['3']['rental cost'] * 1.07, 3)))
+                print('''Total: {}\n Replacement Deposit: {}'''.format(
+                    round(inventory['3']['rental cost'] * 1.07, 3),
+                    round(inventory['3']['replacement cost'] * 0.10, 4)))
 
             if tool in ['Screwdriver', 'screwdriver']:
                 inventory['4']['stock'] -= 1
@@ -168,8 +171,9 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['4']['rental cost'] * 5)
 
-                print('''Total: {}'''.format(
-                    round(inventory['4']['rental cost'] * 1.07, 3)))
+                print('''Total: {}\n Replacement Deposit: {}'''.format(
+                    round(inventory['4']['rental cost'] * 1.07, 3),
+                    round(inventory['4']['replacement cost'] * 0.10, 4)))
 
             returning = input('Are you returning a tool? ').strip()
 
@@ -193,7 +197,7 @@ def main():
                     inventory['4']['stock'] += 1
                     print('In-Stock: ', inventory['4']['stock'])
 
-                print('Thank You for returning, have a blessed day!')
+                print('Thank You for returning', tool)
 
     with open('history.txt', 'a') as file:
         file.write('\n' + str(inventory) + '\n')
