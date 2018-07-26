@@ -20,7 +20,7 @@ def main():
         },
         '3': {
             'name': 'Saw',
-            'stock': 18,
+            'stock': 5,
             'rental cost': 15,
             'replacement cost': 25
         },
@@ -39,6 +39,8 @@ def main():
     while True:
         if who_are_you == 'Employee':
             print('Checking the inventory!')
+            break
+
         elif who_are_you == 'Customer':
             help = input(
                 "Would you like to rent a Tool , see our inventory, or quit? "
@@ -46,30 +48,53 @@ def main():
             if help in ['Quit', 'quit']:
                 break
 
-        if help in [
-                'See our inventory', 'see our inventory', 'see inventory',
-                'Inventory', 'inventory'
-        ]:
-            print(
-                'Choose of tools:',
-                inventory['1']['name'],
-                inventory['2']['name'],
-                inventory['3']['name'],
-                inventory['4']['name'],
-            )
-        if help in ['rent', 'rent a tool', 'rent a Tool', 'rent']:
-            print(
-                'Here is our inventory:',
-                inventory['1']['name'],
-                inventory['2']['name'],
-                inventory['3']['name'],
-                inventory['4']['name'],
-            )
+            if help in [
+                    'See our inventory', 'see our inventory', 'see inventory',
+                    'Inventory', 'inventory'
+            ]:
+                print(
+                    'Choose of tools:',
+                    inventory['1']['name'],
+                    inventory['2']['name'],
+                    inventory['3']['name'],
+                    inventory['4']['name'],
+                )
+            if help in ['rent', 'rent a tool', 'rent a Tool', 'rent']:
+                print()
+                print(
+                    'Here is our inventory:',
+                    inventory['1']['name'],
+                    inventory['2']['name'],
+                    inventory['3']['name'],
+                    inventory['4']['name'],
+                )
 
             tool = input('OK, what tool would you like to rent? ').strip()
+            rental_rate = input(
+                'How many days do you want to rent a tool for? ')
+            print('** rents are a max of Five days**')
+            # if inventory['1']['stock'] > 0:
+            #     print('Currently out of', tool + 's')
+            # elif inventory['2']['stock'] > 0:** Max of Five days**
+            #     print('Currently out of', tool + 's')
+            # elif inventory['3']['stock'] > 0:
+            #     print('Currently out of', tool + 's')
+            # elif inventory['4']['stock'] > 0:
+            #     print('Currently out of', tool + 's')
 
             if tool in ['Hammer', 'hammer']:
                 inventory['1']['stock'] -= 1
+                if rental_rate == '1':
+                    print('Rental Fee: ', inventory['1']['rental cost'])
+                if rental_rate == '2':
+                    print('Rental Fee: ', inventory['1']['rental cost'] * 2)
+                if rental_rate == '3':
+                    print('Rental Fee: ', inventory['1']['rental cost'] * 3)
+                if rental_rate == '4':
+                    print('Rental Fee: ', inventory['1']['rental cost'] * 4)
+                if rental_rate == '5':
+                    print('Rental Fee: ', inventory['1']['rental cost'] * 5)
+
                 print()
                 print(tool, 'has a rental cost of $ 24.0 plus tax.')
                 print()
