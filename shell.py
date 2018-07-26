@@ -1,15 +1,6 @@
 import disk
 import core
 
-# inventory['1']['name'],
-# inventory['1']['stock'],
-# inventory['2']['name'],
-# inventory['2']['stock'],
-# inventory['3']['name'],
-# inventory['3']['stock'],
-# inventory['4']['name'],
-# inventory['4']['stock'],
-
 
 def main():
     # inventory_raw_info = disk.open_file('inventory.txt')
@@ -30,14 +21,14 @@ def main():
         '3': {
             'name': 'Saw',
             'stock': 18,
-            'rental cost': 20,
+            'rental cost': 15,
             'replacement cost': 25
         },
         '4': {
             'name': 'Screwdriver',
             'stock': 18,
-            'rental cost': 20,
-            'replacement cost': 25
+            'rental cost': 5,
+            'replacement cost': 10
         }
     }
 
@@ -76,28 +67,51 @@ def main():
             )
 
             tool = input('OK, what tool would you like to rent? ').strip()
+
             if tool in ['Hammer', 'hammer']:
                 inventory['1']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 24.0')
+                print()
+                print(tool, 'has a rental cost of $ 24.0 plus tax.')
+                print()
                 print('In-stock: ', inventory['1']['stock'])
+                print()
+                print('''Total: {}'''.format(
+                    inventory['1']['rental cost'] * 1.07))
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 55.0')
+                print()
+                print(tool, 'has a rental cost of $ 55.0 plus tax.')
+                print()
                 print('In-stock: ', inventory['2']['stock'])
+                print()
+                print('''Total: {}'''.format(
+                    inventory['2']['rental cost'] * 1.07))
 
             elif tool in ['Saw', 'saw']:
                 inventory['3']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 15.0')
+                print()
+                print(tool, 'has a rental cost of $ 15.0 plus tax.')
+                print()
                 print('In-stock: ', inventory['3']['stock'])
+                print()
+                print(
+                    '''Total: {}'''.format(
+                        round(inventory['3']['rental cost'] * 1.07, 3)), )
 
             elif tool in ['Screwdriver', 'screwdriver']:
                 inventory['4']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 20.0')
+                print()
+                print(tool, 'has a rental cost of $ 20.0 plus tax.')
+                print()
                 print('In-stock: ', inventory['4']['stock'])
+                print()
+                print(
+                    '''Total: {}'''.format(
+                        round(inventory['4']['rental cost'] * 1.07, 3)), )
 
     with open('history.txt', 'a') as file:
-        file.write(str(inventory))
+        file.write('\n' + str(inventory) + '\n')
 
 
 if __name__ == '__main__':
