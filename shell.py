@@ -2,19 +2,6 @@ import disk
 import core
 
 
-def rental(rental_rate, inventory):
-    if rental_rate == '1':
-        print('Rental Fee: ', '$', inventory['1']['rental cost'])
-    if rental_rate == '2':
-        print('Rental Fee: ', '$', inventory['1']['rental cost'] * 2)
-    if rental_rate == '3':
-        print('Rental Fee: ', '$', inventory['1']['rental cost'] * 3)
-    if rental_rate == '4':
-        print('Rental Fee: ', '$', inventory['1']['rental cost'] * 4)
-    if rental_rate == '5':
-        print('Rental Fee: ', '$', inventory['1']['rental cost'] * 5)
-
-
 def main():
     # inventory_raw_info = disk.open_file('inventory.txt')
     # inventory_dictionary = core.create_inventory_dictionary(inventory_raw_info)
@@ -83,9 +70,7 @@ def main():
                 )
 
             tool = input('OK, what tool would you like to rent? ').strip()
-            rental_rate = input(
-                'How many days do you want to rent a tool for? ')
-            print('** rents are a max of Five days**')
+
             # if inventory['1']['stock'] > 0:
             #     print('Currently out of', tool + 's')
             # elif inventory['2']['stock'] > 0:** Max of Five days**
@@ -94,57 +79,116 @@ def main():
             #     print('Currently out of', tool + 's')
             # elif inventory['4']['stock'] > 0:
             #     print('Currently out of', tool + 's')
+            rental_rate = input(
+                'How many days do you want to rent a tool for? ')
+            print('** rents are a max of Five days**')
 
             if tool in ['Hammer', 'hammer']:
                 inventory['1']['stock'] -= 1
-                rental(rental_rate, inventory)
 
                 print()
                 print(tool, 'has a rental cost of $ 24.0 plus tax.')
                 print()
                 print('In-stock: ', inventory['1']['stock'])
                 print()
+                if rental_rate == '1':
+                    print(
+                        'Rental Fee: ',
+                        '$',
+                        inventory['1']['rental cost'],
+                    )
+                if rental_rate == '2':
+                    print('Rental Fee: ', '$',
+                          inventory['1']['rental cost'] * 2)
+                if rental_rate == '3':
+                    print('Rental Fee: ', '$',
+                          inventory['1']['rental cost'] * 3)
+                if rental_rate == '4':
+                    print('Rental Fee: ', '$',
+                          inventory['1']['rental cost'] * 4)
+                if rental_rate == '5':
+                    print('Rental Fee: ', '$',
+                          inventory['1']['rental cost'] * 5)
+
                 print('''Total: {}'''.format(
-                    inventory['1']['rental cost'] * 1.07,
-                    rental(rental_rate, inventory)))
+                    inventory['1']['rental cost'] * 1.07))
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
-                rental(rental_rate, inventory)
 
                 print()
                 print(tool, 'has a rental cost of $ 55.0 plus tax.')
                 print()
                 print('In-stock: ', inventory['2']['stock'])
                 print()
+                if rental_rate == '1':
+                    print('Rental Fee: ', '$', inventory['2']['rental cost'])
+                if rental_rate == '2':
+                    print('Rental Fee: ', '$',
+                          inventory['2']['rental cost'] * 2)
+                if rental_rate == '3':
+                    print('Rental Fee: ', '$',
+                          inventory['2']['rental cost'] * 3)
+                if rental_rate == '4':
+                    print('Rental Fee: ', '$',
+                          inventory['2']['rental cost'] * 4)
+                if rental_rate == '5':
+                    print('Rental Fee: ', '$',
+                          inventory['2']['rental cost'] * 5)
+
                 print('''Total: {}'''.format(
                     inventory['2']['rental cost'] * 1.07))
 
             elif tool in ['Saw', 'saw']:
                 inventory['3']['stock'] -= 1
-                rental(rental_rate, inventory)
 
                 print()
                 print(tool, 'has a rental cost of $ 15.0 plus tax.')
                 print()
                 print('In-stock: ', inventory['3']['stock'])
                 print()
-                print(
-                    '''Total: {}'''.format(
-                        round(inventory['3']['rental cost'] * 1.07, 3)), )
+                if rental_rate == '1':
+                    print('Rental Fee: ', '$', inventory['1']['rental cost'])
+                if rental_rate == '2':
+                    print('Rental Fee: ', '$',
+                          inventory['3']['rental cost'] * 2)
+                if rental_rate == '3':
+                    print('Rental Fee: ', '$',
+                          inventory['3']['rental cost'] * 3)
+                if rental_rate == '4':
+                    print('Rental Fee: ', '$',
+                          inventory['3']['rental cost'] * 4)
+                if rental_rate == '5':
+                    print('Rental Fee: ', '$',
+                          inventory['3']['rental cost'] * 5)
+                print('''Total: {}'''.format(
+                    round(inventory['3']['rental cost'] * 1.07, 3)))
 
-            elif tool in ['Screwdriver', 'screwdriver']:
+            if tool in ['Screwdriver', 'screwdriver']:
                 inventory['4']['stock'] -= 1
-                rental(rental_rate, inventory)
 
                 print()
-                print(tool, 'has a rental cost of $ 20.0 plus tax.')
+                print(tool, 'has a rental cost of $ 5.0 plus tax.')
                 print()
                 print('In-stock: ', inventory['4']['stock'])
                 print()
-                print(
-                    '''Total: {}'''.format(
-                        round(inventory['4']['rental cost'] * 1.07, 3)), )
+                if rental_rate == '1':
+                    print('Rental Fee: ', '$', inventory['1']['rental cost'])
+                if rental_rate == '2':
+                    print('Rental Fee: ', '$',
+                          inventory['4']['rental cost'] * 2)
+                if rental_rate == '3':
+                    print('Rental Fee: ', '$',
+                          inventory['4']['rental cost'] * 3)
+                if rental_rate == '4':
+                    print('Rental Fee: ', '$',
+                          inventory['4']['rental cost'] * 4)
+                if rental_rate == '5':
+                    print('Rental Fee: ', '$',
+                          inventory['4']['rental cost'] * 5)
+
+                print('''Total: {}'''.format(
+                    round(inventory['4']['rental cost'] * 1.07, 3)))
 
     with open('history.txt', 'a') as file:
         file.write('\n' + str(inventory) + '\n')
