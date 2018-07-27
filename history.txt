@@ -1,1 +1,67 @@
-{'1': {'name': 'Hammer', 'stock': 13, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 18, 'rental cost': 20, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 20, 'replacement cost': 25}}
+{'1': {'name': 'Hammer', 'stock': 13, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 18, 'rental cost': 20, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 20, 'replacement cost': 25}}{'1': {'name': 'Hammer', 'stock': 15, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 18, 'rental cost': 20, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 20, 'replacement cost': 25}}{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 9, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 17, 'rental cost': 20, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 17, 'rental cost': 20, 'replacement cost': 25}}{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 9, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 17, 'rental cost': 20, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 17, 'rental cost': 20, 'replacement cost': 25}}{'1': {'name': 'Hammer', 'stock': 15, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 17, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 16, 'rental cost': 5, 'replacement cost': 10}}{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 9, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 17, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 18, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 9, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 9, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 4, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 17, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 9, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 4, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 17, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 3, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 17, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 9, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Saw', 'stock': 4, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 17, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 4, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 17, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver', 'stock': 18, 'rental cost': 5, 'replacement cost': 10}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 4, 'rental cost': 15, 'replacement cost': 25}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 4, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 11, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 4, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 17, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 17, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 16, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 9, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 4, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 17, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}
+
+{'1': {'name': 'Hammer', 'stock': 17, 'rental cost': 24, 'replacement cost': 34}, '2': {'name': 'Drill', 'stock': 10, 'rental cost': 55, 'replacement cost': 100}, '3': {'name': 'Chop-Saw', 'stock': 5, 'rental cost': 45, 'replacement cost': 95}, '4': {'name': 'Screwdriver Set', 'stock': 18, 'rental cost': 5, 'replacement cost': 16}}

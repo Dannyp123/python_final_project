@@ -36,11 +36,11 @@ def main():
 
     name = input("What is the name for this rental? ")
 
-    who_are_you = input("Are you a Employee or a Customer?").strip().title()
+    who_are_you = input("Are you a Employee or a Customer? ").strip().title()
     while True:
         if who_are_you == 'Employee':
             print('How you doing', name)
-            employee = input('Would you like to see the inventory')
+            employee = input('Would you like to see the inventory? ')
             if employee == 'yes':
                 print(
                     inventory['1']['name'],
@@ -56,14 +56,21 @@ def main():
                     inventory['4']['rental cost'],
                     inventory['4']['replacement cost'],
                 )
+                break
+
             if employee == 'no':
+                print('Goodbye', name)
                 break
 
         elif who_are_you == 'Customer':
 
             help = input("Would you like to rent a Tool or quit? ").strip()
-            print('must return with-in 5 days!')
+
             if help in ['Quit', 'quit']:
+                print()
+                print('Have a blessed day', name)
+                print()
+
                 break
 
             if help in ['rent', 'rent a tool', 'rent a Tool', 'rent']:
@@ -77,7 +84,7 @@ def main():
                 )
 
             tool = input('OK, what tool would you like to rent? ').strip()
-
+            print('\nRentals are only up to 5 days')
             rental_rate = int(
                 input('How many days do you want to rent a tool for? '))
 
@@ -109,14 +116,14 @@ def main():
                           inventory['1']['rental cost'] * 5)
 
                 print(
-                    '''Cost plus Tax: ${}\nReplacement Deposit: ${}'''.format(
-                        inventory['1']['rental cost'] * 1.07,
-                        round(inventory['1']['replacement cost'] * 0.10, 4)))
+                    '''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
+                    format(inventory['1']['rental cost'] * 1.07,
+                           inventory['1']['replacement cost'] * 0.10))
 
-                print(
-                    'Total:', inventory['1']['rental cost'] * 1.07 + round(
-                        inventory['1']['replacement cost'] * 0.10, 4) +
-                    inventory['1']['rental cost'] * rental_rate)
+                print('Total: ${:.2f}\n'.format(
+                    inventory['1']['rental cost'] * 1.07 +
+                    inventory['1']['replacement cost'] * 0.10 +
+                    inventory['1']['rental cost'] * rental_rate))
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
@@ -142,13 +149,14 @@ def main():
                           inventory['2']['rental cost'] * 5)
 
                 print(
-                    '''Cost plus Tax: ${}\nReplacement Deposit: ${}'''.format(
-                        inventory['2']['rental cost'] * 1.07,
-                        round(inventory['2']['replacement cost'] * 0.10, 4)))
-                print(
-                    'Total:', inventory['2']['rental cost'] * 1.07 + round(
-                        inventory['2']['replacement cost'] * 0.10, 4) +
-                    inventory['2']['rental cost'] * rental_rate)
+                    '''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
+                    format(inventory['2']['rental cost'] * 1.07,
+                           inventory['2']['replacement cost'] * 0.10))
+
+                print('Total: ${:.2f}\n'.format(
+                    inventory['2']['rental cost'] * 1.07 +
+                    inventory['2']['replacement cost'] * 0.10 +
+                    inventory['2']['rental cost'] * rental_rate))
 
             elif tool in ['Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw']:
                 inventory['3']['stock'] -= 1
@@ -173,15 +181,19 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['3']['rental cost'] * 5)
                 print(
-                    '''Cost plus Tax: ${}\nReplacement Deposit: ${}'''.format(
-                        round(inventory['3']['rental cost'] * 1.07, 3),
-                        round(inventory['3']['replacement cost'] * 0.10, 4)))
-                print(
-                    'Total:', inventory['3']['rental cost'] * 1.07 + round(
-                        inventory['3']['replacement cost'] * 0.10, 4) +
-                    inventory['3']['rental cost'] * rental_rate)
+                    '''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
+                    format(inventory['3']['rental cost'] * 1.07,
+                           inventory['3']['replacement cost'] * 0.10))
 
-            if tool in ['Screwdriver', 'screwdriver']:
+                print('Total: ${:.2f}\n'.format(
+                    inventory['3']['rental cost'] * 1.07 +
+                    inventory['3']['replacement cost'] * 0.10 +
+                    inventory['3']['rental cost'] * rental_rate))
+
+            elif tool in [
+                    'Screwdriver Set', 'screwdriver set', 'screwdrivers',
+                    'Screwdrivers'
+            ]:
                 inventory['4']['stock'] -= 1
 
                 print()
@@ -189,25 +201,30 @@ def main():
                 print()
                 print('In-stock: ', inventory['4']['stock'])
                 print()
-                if rental_rate == '1':
+                if rental_rate == 1:
                     print('Rental Fee: ', '$', inventory['1']['rental cost'])
-                if rental_rate == '2':
+                if rental_rate == 2:
                     print('Rental Fee: ', '$',
                           inventory['4']['rental cost'] * 2)
-                if rental_rate == '3':
+                if rental_rate == 3:
                     print('Rental Fee: ', '$',
                           inventory['4']['rental cost'] * 3)
-                if rental_rate == '4':
+                if rental_rate == 4:
                     print('Rental Fee: ', '$',
                           inventory['4']['rental cost'] * 4)
-                if rental_rate == '5':
+                if rental_rate == 5:
                     print('Rental Fee: ', '$',
                           inventory['4']['rental cost'] * 5)
 
                 print(
-                    '''Cost plus Tax: ${}\nReplacement Deposit: ${}'''.format(
-                        round(inventory['4']['rental cost'] * 1.07, 3),
-                        round(inventory['4']['replacement cost'] * 0.10, 4)))
+                    '''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
+                    format(inventory['4']['rental cost'] * 1.07,
+                           inventory['4']['replacement cost'] * 0.10))
+
+                print('Total: ${:.2f}\n'.format(
+                    inventory['4']['rental cost'] * 1.07 +
+                    inventory['4']['replacement cost'] * 0.10 +
+                    inventory['4']['rental cost'] * rental_rate))
 
             returning = input('Are you returning a tool? ').strip()
 
@@ -217,15 +234,15 @@ def main():
                     inventory['1']['stock'] += 1
 
                     print('In-Stock: ', inventory['1']['stock'])
-                    print('Here is your refund for returning item', '$',
-                          round(inventory['1']['replacement cost'] * 0.10, 4))
+                    print('Here is your refund for returning item ${:.2f}'.
+                          format(inventory['1']['replacement cost'] * 0.10))
 
                 elif what_tool in ['Drill', 'drill']:
                     inventory['2']['stock'] += 1
 
                     print('In-Stock: ', inventory['2']['stock'])
-                    print('Here is your refund for returning item', '$',
-                          round(inventory['2']['replacement cost'] * 0.10, 4))
+                    print('Here is your refund for returning item ${:.2f}'.
+                          format(inventory['2']['replacement cost'] * 0.10))
 
                 elif what_tool in [
                         'Chop-Saw', 'Chop saw', 'Chop Saw', 'chop-saw',
@@ -234,16 +251,16 @@ def main():
                     inventory['3']['stock'] += 1
 
                     print('In-Stock: ', inventory['3']['stock'])
-                    print('Here is your refund for returning item', '$',
-                          round(inventory['3']['replacement cost'] * 0.10, 4))
+                    print('Here is your refund for returning item ${:.2f}'.
+                          format(inventory['3']['replacement cost'] * 0.10, 4))
 
                 elif what_tool in [
                         'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
                 ]:
                     inventory['4']['stock'] += 1
                     print('In-Stock: ', inventory['4']['stock'])
-                    print('Here is your refund for returning item', '$',
-                          round(inventory['4']['replacement cost'] * 0.10, 4))
+                    print('Here is your refund for returning item ${:.2f}'.
+                          format(inventory['4']['replacement cost'] * 0.10))
 
                 print('Thank You for returning your tool!')
 
