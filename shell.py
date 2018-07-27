@@ -68,8 +68,37 @@ def main():
 
             if help in ['Quit', 'quit']:
                 print()
-                print('Have a blessed day', name)
+                print('Have a blessed day', name, 'Come back soon')
                 print()
+                if tool in ['Hammer', 'hammer']:
+                    print('Total: ${:.2f}\n'.format(
+                        inventory['1']['rental cost'] * 1.07 +
+                        inventory['1']['replacement cost'] * 0.10 +
+                        inventory['1']['rental cost'] * rental_rate))
+                elif tool in ['Drill', 'drill']:
+
+                    print('Total: ${:.2f}\n'.format(
+                        inventory['2']['rental cost'] * 1.07 +
+                        inventory['2']['replacement cost'] * 0.10 +
+                        inventory['2']['rental cost'] * rental_rate))
+                elif tool in [
+                        'Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw',
+                        'Chop Saw'
+                ]:
+
+                    print('Total: ${:.2f}\n'.format(
+                        inventory['3']['rental cost'] * 1.07 +
+                        inventory['3']['replacement cost'] * 0.10 +
+                        inventory['3']['rental cost'] * rental_rate))
+                elif tool in [
+                        'Screwdriver Set', 'screwdriver set', 'screwdrivers',
+                        'Screwdrivers'
+                ]:
+
+                    print('Total: ${:.2f}\n'.format(
+                        inventory['4']['rental cost'] * 1.07 +
+                        inventory['4']['replacement cost'] * 0.10 +
+                        inventory['4']['rental cost'] * rental_rate))
 
                 break
 
@@ -96,7 +125,7 @@ def main():
                 print()
                 print('In-stock: ', inventory['1']['stock'])
                 print()
-                if rental_rate == '1':
+                if rental_rate == 1:
                     print(
                         'Rental Fee: ',
                         '$',
@@ -158,7 +187,9 @@ def main():
                     inventory['2']['replacement cost'] * 0.10 +
                     inventory['2']['rental cost'] * rental_rate))
 
-            elif tool in ['Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw']:
+            elif tool in [
+                    'Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw', 'Chop Saw'
+            ]:
                 inventory['3']['stock'] -= 1
 
                 print()
@@ -227,21 +258,21 @@ def main():
                     inventory['4']['rental cost'] * rental_rate))
 
             returning = input('Are you returning a tool? ').strip()
-
+            print()
             if returning == 'yes':
                 what_tool = input('What tool(s) did you have? ')
                 if what_tool in ['Hammer', 'hammer']:
                     inventory['1']['stock'] += 1
 
-                    print('In-Stock: ', inventory['1']['stock'])
-                    print('Here is your refund for returning item ${:.2f}'.
+                    print('\nIn-Stock: ', inventory['1']['stock'])
+                    print('\nHere is your refund for returning item ${:.2f}'.
                           format(inventory['1']['replacement cost'] * 0.10))
 
                 elif what_tool in ['Drill', 'drill']:
                     inventory['2']['stock'] += 1
 
-                    print('In-Stock: ', inventory['2']['stock'])
-                    print('Here is your refund for returning item ${:.2f}'.
+                    print('\nIn-Stock: ', inventory['2']['stock'])
+                    print('\nHere is your refund for returning item ${:.2f}'.
                           format(inventory['2']['replacement cost'] * 0.10))
 
                 elif what_tool in [
@@ -250,19 +281,19 @@ def main():
                 ]:
                     inventory['3']['stock'] += 1
 
-                    print('In-Stock: ', inventory['3']['stock'])
-                    print('Here is your refund for returning item ${:.2f}'.
-                          format(inventory['3']['replacement cost'] * 0.10, 4))
+                    print('\nIn-Stock: ', inventory['3']['stock'])
+                    print('\nHere is your refund for returning item ${:.2f}'.
+                          format(inventory['3']['replacement cost'] * 0.10))
 
                 elif what_tool in [
                         'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
                 ]:
                     inventory['4']['stock'] += 1
-                    print('In-Stock: ', inventory['4']['stock'])
-                    print('Here is your refund for returning item ${:.2f}'.
+                    print('\nIn-Stock: ', inventory['4']['stock'])
+                    print('\nHere is your refund for returning item ${:.2f}'.
                           format(inventory['4']['replacement cost'] * 0.10))
 
-                print('Thank You for returning your tool!')
+                print('\t\nThank You for returning your tool!')
 
     with open('history.txt', 'a') as file:
         file.write('\n' + str(inventory) + '\n')
