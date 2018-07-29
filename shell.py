@@ -34,7 +34,7 @@ def main():
 
     print("Welcome to Daniel's Tool Rental!")
 
-    name = input("What is the name for this rental? ")
+    name = input("What is the name on this rental? ")
 
     who_are_you = input("Are you a Employee or a Customer? ").strip().title()
     while True:
@@ -75,13 +75,13 @@ def main():
                         inventory['1']['rental cost'] * 1.07 +
                         inventory['1']['replacement cost'] * 0.10 +
                         inventory['1']['rental cost'] * rental_rate))
-                elif tool in ['Drill', 'drill']:
+                if tool in ['Drill', 'drill']:
 
                     print('Total: ${:.2f}\n'.format(
                         inventory['2']['rental cost'] * 1.07 +
                         inventory['2']['replacement cost'] * 0.10 +
                         inventory['2']['rental cost'] * rental_rate))
-                elif tool in [
+                if tool in [
                         'Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw',
                         'Chop Saw'
                 ]:
@@ -90,7 +90,7 @@ def main():
                         inventory['3']['rental cost'] * 1.07 +
                         inventory['3']['replacement cost'] * 0.10 +
                         inventory['3']['rental cost'] * rental_rate))
-                elif tool in [
+                if tool in [
                         'Screwdriver Set', 'screwdriver set', 'screwdrivers',
                         'Screwdrivers'
                 ]:
@@ -118,19 +118,22 @@ def main():
                 input('How many days do you want to rent a tool for? '))
 
             if tool in ['Hammer', 'hammer']:
+                print()
+                if rental_rate > 5:
+                    print('Can not rent for more than 5 days!')
+                    break
                 inventory['1']['stock'] -= 1
+                print(tool,
+                      'has a rental cost of $ 24.0 plus tax for one day.')
 
                 print()
-                print(tool, 'has a rental cost of $ 24.0 plus tax.')
+
                 print()
                 print('In-stock: ', inventory['1']['stock'])
                 print()
+
                 if rental_rate == 1:
-                    print(
-                        'Rental Fee: ',
-                        '$',
-                        inventory['1']['rental cost'],
-                    )
+                    print('Rental Fee: ', '$', inventory['1']['rental cost'])
                 if rental_rate == 2:
                     print('Rental Fee: ', '$',
                           inventory['1']['rental cost'] * 2)
@@ -153,12 +156,18 @@ def main():
                     inventory['1']['rental cost'] * 1.07 +
                     inventory['1']['replacement cost'] * 0.10 +
                     inventory['1']['rental cost'] * rental_rate))
+                with open('history.txt', 'a') as file:
+                    file.write(
+                        str(inventory['1']['rental cost'] * 1.07 +
+                            inventory['1']['replacement cost'] * 0.10 +
+                            inventory['1']['rental cost'] * rental_rate))
 
             elif tool in ['Drill', 'drill']:
                 inventory['2']['stock'] -= 1
+                print(tool, 'has a rental cost of $ 55.0 plus tax per day.')
 
                 print()
-                print(tool, 'has a rental cost of $ 55.0 plus tax.')
+
                 print()
                 print('In-stock: ', inventory['2']['stock'])
                 print()
@@ -186,14 +195,19 @@ def main():
                     inventory['2']['rental cost'] * 1.07 +
                     inventory['2']['replacement cost'] * 0.10 +
                     inventory['2']['rental cost'] * rental_rate))
+                with open('history.txt', 'a') as file:
+                    file.write(inventory['2']['rental cost'] * 1.07 +
+                               inventory['2']['replacement cost'] * 0.10 +
+                               inventory['2']['rental cost'] * rental_rate)
 
             elif tool in [
                     'Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw', 'Chop Saw'
             ]:
                 inventory['3']['stock'] -= 1
+                print(tool, 'has a rental cost of $ 45 plus tax per day.')
 
                 print()
-                print(tool, 'has a rental cost of $ 15.0 plus tax.')
+
                 print()
                 print('In-stock: ', inventory['3']['stock'])
                 print()
@@ -220,15 +234,20 @@ def main():
                     inventory['3']['rental cost'] * 1.07 +
                     inventory['3']['replacement cost'] * 0.10 +
                     inventory['3']['rental cost'] * rental_rate))
+                with open('history.txt', 'a') as file:
+                    file.write(inventory['3']['rental cost'] * 1.07 +
+                               inventory['3']['replacement cost'] * 0.10 +
+                               inventory['3']['rental cost'] * rental_rate)
 
             elif tool in [
                     'Screwdriver Set', 'screwdriver set', 'screwdrivers',
                     'Screwdrivers'
             ]:
                 inventory['4']['stock'] -= 1
+                print(tool, 'has a rental cost of $ 5.0 plus tax per day.')
 
                 print()
-                print(tool, 'has a rental cost of $ 5.0 plus tax.')
+
                 print()
                 print('In-stock: ', inventory['4']['stock'])
                 print()
@@ -257,10 +276,15 @@ def main():
                     inventory['4']['replacement cost'] * 0.10 +
                     inventory['4']['rental cost'] * rental_rate))
 
+                with open('history.txt', 'a') as file:
+                    file.write(inventory['4']['rental cost'] * 1.07 +
+                               inventory['4']['replacement cost'] * 0.10 +
+                               inventory['4']['rental cost'] * rental_rate)
+
             returning = input('Are you returning a tool? ').strip()
             print()
             if returning == 'yes':
-                what_tool = input('What tool(s) did you have? ')
+                what_tool = input('What tool did you have? ')
                 if what_tool in ['Hammer', 'hammer']:
                     inventory['1']['stock'] += 1
 
