@@ -15,7 +15,7 @@ def main():
         '2': {
             'name': 'Drill',
             'stock': 10,
-            'rental cost': 55,
+            'rental cost': 150,
             'replacement cost': 100
         },
         '3': {
@@ -38,7 +38,8 @@ def main():
         'Bussiness Hours:\n \nMon-Fri: 7:00 am to 6:00 pm \nSat: 8:00 am to 5:00 pm \nSun: Closed'
     )
     print()
-    name = input("What is the name on this rental? ")
+    name = input("What is the name on this rental? ").strip()
+    address = input("Address: ")
 
     who_are_you = input("Are you a Employee or a Customer? ").strip().title()
     while True:
@@ -97,7 +98,9 @@ def main():
             tool = input('OK, what tool would you like to rent? ').strip()
             print('\nRentals are only up to 5 days')
             print()
-            print("\nWith each rental, there is a 10% replacement fee")
+            print(
+                "\nWith each rental, there is a 10% fee of product replacement value."
+            )
             print()
             rental_rate = int(
                 input('How many days do you want to rent a tool for? '))
@@ -278,6 +281,8 @@ def main():
                     inventory['4']['rental cost'] * 1.07 +
                     inventory['4']['replacement cost'] * 0.10 +
                     inventory['4']['rental cost'] * rental_rate))
+
+            card_number = input('What is your credit card number? ')
 
             returning = input('Are you returning a tool? ').strip()
             print()
