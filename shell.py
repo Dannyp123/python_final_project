@@ -60,6 +60,15 @@ def main():
                     inventory['4']['rental cost'],
                     inventory['4']['replacement cost'],
                 )
+                revenue = input('Would you like to see the revenue? ')
+                if revenue == 'yes':
+                    with open('history.txt') as file:
+                        file_information = file.readlines()
+                        items = str(file_information).split('\n')
+
+                        print(file_information)
+                if revenue == 'no':
+                    print('Have a blessed day', name)
                 break
 
             if employee == 'no':
