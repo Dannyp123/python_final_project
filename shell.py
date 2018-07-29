@@ -47,14 +47,21 @@ def main():
     who_are_you = input("Are you a Employee or a Customer? ").strip().title()
     while True:
         if who_are_you == 'Employee':
+            print()
             print('How you doing', name)
             employee = input('Would you like to see the inventory? ')
+            print()
             if employee == 'yes':
+                print()
                 print(
                     inventory['1']['name'],
                     inventory['1']['stock'],
                     inventory['1']['rental cost'],
                     inventory['1']['replacement cost'],
+                    inventory['2']['name'],
+                    inventory['2']['stock'],
+                    inventory['2']['rental cost'],
+                    inventory['2']['replacement cost'],
                     inventory['3']['name'],
                     inventory['3']['stock'],
                     inventory['3']['rental cost'],
@@ -64,9 +71,12 @@ def main():
                     inventory['4']['rental cost'],
                     inventory['4']['replacement cost'],
                 )
+                print()
                 revenue = input('Would you like to see the revenue? ')
+                print()
                 if revenue == 'yes':
                     with open('history.txt') as file:
+                        print()
                         file_information = file.read()
                         # items = str(file_information).split('\n')
 
