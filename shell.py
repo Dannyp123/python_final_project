@@ -9,26 +9,26 @@ def main():
         '1': {
             'name': 'Hammer',
             'stock': 17,
-            'rental cost': 24,
-            'replacement cost': 34
+            'rental cost': 10,
+            'replacement cost': 45
         },
         '2': {
             'name': 'Drill',
             'stock': 10,
-            'rental cost': 150,
+            'rental cost': 30,
             'replacement cost': 100
         },
         '3': {
             'name': 'Chop-Saw',
             'stock': 5,
-            'rental cost': 45,
-            'replacement cost': 95
+            'rental cost': 115,
+            'replacement cost': 450
         },
         '4': {
             'name': 'Screwdriver Set',
             'stock': 18,
-            'rental cost': 5,
-            'replacement cost': 16
+            'rental cost': 26,
+            'replacement cost': 35
         }
     }
 
@@ -39,7 +39,10 @@ def main():
     )
     print()
     name = input("What is the name on this rental? ").strip()
+    print()
     address = input("Address: ")
+    print()
+    phone = input("Phone Number: ")
 
     who_are_you = input("Are you a Employee or a Customer? ").strip().title()
     while True:
@@ -112,7 +115,7 @@ def main():
                     break
                 inventory['1']['stock'] -= 1
                 print(tool,
-                      'has a rental cost of $ 24.0 plus tax for one day.')
+                      'has a rental cost of $ 10.0 plus tax for one day.')
 
                 print()
 
@@ -155,7 +158,7 @@ def main():
                     print('Can not rent for more than 5 days!')
                     break
                 inventory['2']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 55.0 plus tax per day.')
+                print(tool, 'has a rental cost of $ 30.0 plus tax per day.')
 
                 print()
 
@@ -199,7 +202,7 @@ def main():
                     print('Can not rent for more than 5 days!')
                     break
                 inventory['3']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 45 plus tax per day.')
+                print(tool, 'has a rental cost of $ 115 plus tax per day.')
 
                 print()
 
@@ -244,7 +247,7 @@ def main():
                     print('Can not rent for more than 5 days!')
                     break
                 inventory['4']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 5.0 plus tax per day.')
+                print(tool, 'has a rental cost of $ 26.0 plus tax per day.')
 
                 print()
 
