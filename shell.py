@@ -35,7 +35,7 @@ def main():
     print("Welcome to Daniel's Tool Rental!")
     print()
     print(
-        'Bussiness Hours: \nMon-Fri: 7:00 am to 6:00 pm \nSat: 8:00 am to 5:00 pm \nSun: Closed'
+        'Bussiness Hours:\n \nMon-Fri: 7:00 am to 6:00 pm \nSat: 8:00 am to 5:00 pm \nSun: Closed'
     )
     print()
     name = input("What is the name on this rental? ")
@@ -63,8 +63,8 @@ def main():
                 revenue = input('Would you like to see the revenue? ')
                 if revenue == 'yes':
                     with open('history.txt') as file:
-                        file_information = file.readlines()
-                        items = str(file_information).split('\n')
+                        file_information = file.read()
+                        # items = str(file_information).split('\n')
 
                         print(file_information)
                 if revenue == 'no':
@@ -132,7 +132,7 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['1']['rental cost'] * 5)
                 with open('history.txt', 'a') as file:
-                    file.write('\n' + str(
+                    file.write('\n$' + str(
                         round(inventory['1']['rental cost'] * 1.07 +
                               inventory['1']['replacement cost'] * 0.10 +
                               inventory['1']['rental cost'] * rental_rate)))
@@ -174,7 +174,7 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['2']['rental cost'] * 5)
                 with open('history.txt', 'a') as file:
-                    file.write('\n' + str(
+                    file.write('\n$' + str(
                         round(inventory['2']['rental cost'] * 1.07 +
                               inventory['2']['replacement cost'] * 0.10 +
                               inventory['2']['rental cost'] * rental_rate)))
@@ -218,7 +218,7 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['3']['rental cost'] * 5)
                 with open('history.txt', 'a') as file:
-                    file.write('\n' + str(
+                    file.write('\n$' + str(
                         round(inventory['3']['rental cost'] * 1.07 +
                               inventory['3']['replacement cost'] * 0.10 +
                               inventory['3']['rental cost'] * rental_rate)))
@@ -264,7 +264,7 @@ def main():
                           inventory['4']['rental cost'] * 5)
 
                 with open('history.txt', 'a') as file:
-                    file.write('\n' + str(
+                    file.write('\n$' + str(
                         round(inventory['4']['rental cost'] * 1.07 +
                               inventory['4']['replacement cost'] * 0.10 +
                               inventory['4']['rental cost'] * rental_rate)))
