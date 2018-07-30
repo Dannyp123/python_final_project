@@ -35,9 +35,7 @@ def is_credit_card(cc_str):
         return False
 
 
-def main():
-    # inventory_raw_info = disk.open_file('inventory.txt')
-    # inventory_dictionary = core.create_inventory_dictionary(inventory_raw_info)
+def load_inventory():
     inventory = {
         '1': {
             'name': 'Hammer',
@@ -64,6 +62,78 @@ def main():
             'replacement cost': 35
         }
     }
+    return inventory
+
+
+def get_phone_number():
+    while True:
+        phone = input("Phone Number: ")
+        if is_phone_number(phone) == True:
+            print()
+            print('Thank you for your information!')
+            print()
+            break
+        else:
+            print('Invalid Phone Number!')
+
+
+def get_card_number():
+    while True:
+        card_number = input('What is your credit card number? ')
+        if is_credit_card(card_number):
+            print()
+            print('Now your Card Number is on file.')
+            print()
+            break
+        else:
+            print('Invalid Card Number!')
+
+
+def returning_items(inventory):
+    returning = input('Are you returning a tool? ').strip()
+    print()
+    if returning == 'yes':
+        what_tool = input('What tool did you have? ')
+        if what_tool in ['Hammer', 'hammer']:
+            inventory['1']['stock'] += 1
+
+            print('\nIn-Stock: ', inventory['1']['stock'])
+            print('\nHere is your refund for returning item ${:.2f}'.format(
+                inventory['1']['replacement cost'] * 0.10))
+
+        elif what_tool in ['Drill', 'drill']:
+            inventory['2']['stock'] += 1
+
+            print('\nIn-Stock: ', inventory['2']['stock'])
+            print('\nHere is your refund for returning item ${:.2f}'.format(
+                inventory['2']['replacement cost'] * 0.10))
+
+        elif what_tool in [
+                'Chop-Saw', 'Chop saw', 'Chop Saw', 'chop-saw', 'chopsaw',
+                'chop saw'
+        ]:
+            inventory['3']['stock'] += 1
+
+            print('\nIn-Stock: ', inventory['3']['stock'])
+            print('\nHere is your refund for returning item ${:.2f}'.format(
+                inventory['3']['replacement cost'] * 0.10))
+
+        elif what_tool in [
+                'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
+        ]:
+            inventory['4']['stock'] += 1
+            print('\nIn-Stock: ', inventory['4']['stock'])
+            print('\nHere is your refund for returning item ${:.2f}'.format(
+                inventory['4']['replacement cost'] * 0.10))
+
+        print('\t\nThank You for returning your tool!')
+        print()
+        print('\tHave a blessed day.')
+
+
+def main():
+
+    inventory = load_inventory()
 
     print("Welcome to Daniel's Tool Rental!")
     print()
@@ -73,21 +143,17 @@ def main():
     print()
     name = input("What is the name on this rental? ").strip()
     print()
-    phone = input("Phone Number: ")
-    if is_phone_number(phone):
-        print()
-        print('Thank you for your information!')
-        print()
-    else:
-        print('Invalid Phone Number!')
-        exit()
 
-    who_are_you = input("Are you a Employee or a Customer? ").strip().title()
+    get_phone_number()
+
     while True:
+        who_are_you = input(
+            "Are you a Employee or a Customer? ").strip().title()
+
         if who_are_you == 'Employee':
             print()
             print('How you doing', name)
-            employee = input('Would you like to see the inventory? ')
+            employee = input('\nWould you like to see the inventory? ')
             print()
             if employee == 'yes':
                 print()
@@ -122,7 +188,7 @@ def main():
                     inventory['4']['replacement cost'],
                 )
                 print()
-                revenue = input('Would you like to see the revenue? ')
+                revenue = input('\nWould you like to see the revenue? ')
                 print()
                 if revenue == 'yes':
                     with open('history.txt') as file:
@@ -141,7 +207,7 @@ def main():
                 break
 
         elif who_are_you == 'Customer':
-
+            returning_items(inventory)
             help = input("Would you like to rent a Tool or quit? ").strip()
 
             if help in ['Quit', 'quit']:
@@ -149,7 +215,7 @@ def main():
                 print('Have a blessed day', name, 'Come back soon')
                 break
 
-            if help in ['rent', 'rent a tool', 'rent a Tool', 'rent']:
+            if help in ['rent', 'rent a tool', 'rent a Tool', 'Rent']:
                 print()
                 print(
                     'Here is our inventory:',
@@ -179,6 +245,7 @@ def main():
                       'has a rental cost of $ 10.0 plus tax for one day.')
 
                 print()
+                get_card_number()
 
                 print()
                 print('In-stock: ', inventory['1']['stock'])
@@ -222,7 +289,7 @@ def main():
                 print(tool, 'has a rental cost of $ 30.0 plus tax per day.')
 
                 print()
-
+                get_card_number()
                 print()
                 print('In-stock: ', inventory['2']['stock'])
                 print()
@@ -266,7 +333,7 @@ def main():
                 print(tool, 'has a rental cost of $ 115 plus tax per day.')
 
                 print()
-
+                get_card_number()
                 print()
                 print('In-stock: ', inventory['3']['stock'])
                 print()
@@ -313,7 +380,7 @@ def main():
                 print(tool, 'has a rental cost of $ 26.0 plus tax per day.')
 
                 print()
-
+                get_card_number()
                 print()
                 print('In-stock: ', inventory['4']['stock'])
                 print()
@@ -347,54 +414,6 @@ def main():
                     inventory['4']['rental cost'] * 1.07 +
                     inventory['4']['replacement cost'] * 0.10 +
                     inventory['4']['rental cost'] * rental_rate))
-
-            card_number = input('What is your credit card number? ')
-            if is_credit_card(card_number):
-                print()
-                print('Now your Card Number is on file.')
-                print()
-            else:
-                print('Invalid Card Number!')
-
-            returning = input('Are you returning a tool? ').strip()
-            print()
-            if returning == 'yes':
-                what_tool = input('What tool did you have? ')
-                if what_tool in ['Hammer', 'hammer']:
-                    inventory['1']['stock'] += 1
-
-                    print('\nIn-Stock: ', inventory['1']['stock'])
-                    print('\nHere is your refund for returning item ${:.2f}'.
-                          format(inventory['1']['replacement cost'] * 0.10))
-
-                elif what_tool in ['Drill', 'drill']:
-                    inventory['2']['stock'] += 1
-
-                    print('\nIn-Stock: ', inventory['2']['stock'])
-                    print('\nHere is your refund for returning item ${:.2f}'.
-                          format(inventory['2']['replacement cost'] * 0.10))
-
-                elif what_tool in [
-                        'Chop-Saw', 'Chop saw', 'Chop Saw', 'chop-saw',
-                        'chopsaw', 'chop saw'
-                ]:
-                    inventory['3']['stock'] += 1
-
-                    print('\nIn-Stock: ', inventory['3']['stock'])
-                    print('\nHere is your refund for returning item ${:.2f}'.
-                          format(inventory['3']['replacement cost'] * 0.10))
-
-                elif what_tool in [
-                        'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
-                ]:
-                    inventory['4']['stock'] += 1
-                    print('\nIn-Stock: ', inventory['4']['stock'])
-                    print('\nHere is your refund for returning item ${:.2f}'.
-                          format(inventory['4']['replacement cost'] * 0.10))
-
-                print('\t\nThank You for returning your tool!')
-                print()
-                print('\tHave a blessed day.')
 
 
 if __name__ == '__main__':
