@@ -2,6 +2,38 @@ import disk
 import core
 
 
+def is_phone_number(phone_str):
+    ''' str -> bool 
+
+    >>> is_phone_number('1234567891')
+    True
+    >>> is_phone_number('2345689')
+    False
+    >>> is_phone_number('6624734353')
+    True
+    '''
+    if phone_str.isdigit() and len(phone_str) == 10:
+        return True
+    else:
+        return False
+
+
+def is_credit_card(cc_str):
+    ''' str -> bool 
+
+    >>> is_credit_card('1234567891234567')
+    True
+    >>> is_credit_card('2345689')
+    False
+    >>> is_credit_card('4445555466795678')
+    True
+    '''
+    if cc_str.isdigit() and len(cc_str) == 16:
+        return True
+    else:
+        return False
+
+
 def main():
     # inventory_raw_info = disk.open_file('inventory.txt')
     # inventory_dictionary = core.create_inventory_dictionary(inventory_raw_info)
@@ -40,9 +72,14 @@ def main():
     print()
     name = input("What is the name on this rental? ").strip()
     print()
-    address = input("Address: ")
-    print()
     phone = input("Phone Number: ")
+    if is_phone_number(phone):
+        print()
+        print('Thank you for your information!')
+        print()
+    else:
+        print('Invalid Phone Number!')
+        exit()
 
     who_are_you = input("Are you a Employee or a Customer? ").strip().title()
     while True:
@@ -78,7 +115,6 @@ def main():
                     with open('history.txt') as file:
                         print()
                         file_information = file.read()
-                        # items = str(file_information).split('\n')
 
                         print(file_information)
                 if revenue == 'no':
@@ -234,10 +270,12 @@ def main():
                     print('Rental Fee: ', '$',
                           inventory['3']['rental cost'] * 5)
                 with open('history.txt', 'a') as file:
-                    file.write('\n$' + str(
-                        round(inventory['3']['rental cost'] * 1.07 +
-                              inventory['3']['replacement cost'] * 0.10 +
-                              inventory['3']['rental cost'] * rental_rate)))
+                    file.write(
+                        '\n$' + str(
+                            round(inventory['3']['rental cost'] * 1.07 +
+                                  inventory['3']['replacement cost'] * 0.10 +
+                                  inventory['3']['rental cost'] * rental_rate)
+                        ), )
 
                 print(
                     '''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
@@ -296,6 +334,12 @@ def main():
                     inventory['4']['rental cost'] * rental_rate))
 
             card_number = input('What is your credit card number? ')
+            if is_credit_card(card_number):
+                print()
+                print('Now your Card Number is on file.')
+                print()
+            else:
+                print('Invalid Card Number!')
 
             returning = input('Are you returning a tool? ').strip()
             print()
@@ -334,6 +378,8 @@ def main():
                           format(inventory['4']['replacement cost'] * 0.10))
 
                 print('\t\nThank You for returning your tool!')
+                print()
+                print('\tHave a blessed day.')
 
 
 if __name__ == '__main__':
