@@ -89,46 +89,60 @@ def get_card_number():
             print('Invalid Card Number!')
 
 
-def returning_items(inventory):
-    returning = input('Are you returning a tool? ').strip()
-    print()
-    if returning == 'yes':
-        what_tool = input('What tool did you have? ')
-        if what_tool in ['Hammer', 'hammer']:
-            inventory['1']['stock'] += 1
-
-            print('\nIn-Stock: ', inventory['1']['stock'])
-            print('\nHere is your refund for returning item ${:.2f}'.format(
-                inventory['1']['replacement cost'] * 0.10))
-
-        elif what_tool in ['Drill', 'drill']:
-            inventory['2']['stock'] += 1
-
-            print('\nIn-Stock: ', inventory['2']['stock'])
-            print('\nHere is your refund for returning item ${:.2f}'.format(
-                inventory['2']['replacement cost'] * 0.10))
-
-        elif what_tool in [
-                'Chop-Saw', 'Chop saw', 'Chop Saw', 'chop-saw', 'chopsaw',
-                'chop saw'
-        ]:
-            inventory['3']['stock'] += 1
-
-            print('\nIn-Stock: ', inventory['3']['stock'])
-            print('\nHere is your refund for returning item ${:.2f}'.format(
-                inventory['3']['replacement cost'] * 0.10))
-
-        elif what_tool in [
-                'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
-        ]:
-            inventory['4']['stock'] += 1
-            print('\nIn-Stock: ', inventory['4']['stock'])
-            print('\nHere is your refund for returning item ${:.2f}'.format(
-                inventory['4']['replacement cost'] * 0.10))
-
-        print('\t\nThank You for returning your tool!')
+def employee_side(who_are_you, name, inventory):
+    if who_are_you == 'Employee':
         print()
-        print('\tHave a blessed day.')
+        print('How you doing', name)
+        employee = input('\nWould you like to see the inventory? ')
+        print()
+        if employee == 'yes':
+            print()
+            print(
+                inventory['1']['name'] + '\n' + '\n',
+                '\nStock: ',
+                inventory['1']['stock'],
+                '\nRental Cost: ',
+                inventory['1']['rental cost'],
+                '\nReplacement Cost:',
+                inventory['1']['replacement cost'],
+                '\n' + inventory['2']['name'] + '\n',
+                '\nStock: ',
+                inventory['2']['stock'],
+                '\nRental Cost: ',
+                inventory['2']['rental cost'],
+                '\nReplacement Cost:',
+                inventory['2']['replacement cost'],
+                '\n' + inventory['3']['name'] + '\n',
+                '\nStock: ',
+                inventory['3']['stock'],
+                '\nRental Cost: ',
+                inventory['3']['rental cost'],
+                '\nReplacement Cost:',
+                inventory['3']['replacement cost'],
+                '\n' + inventory['4']['name'] + '\n',
+                '\nStock: ',
+                inventory['4']['stock'],
+                '\nRental Cost: ',
+                inventory['4']['rental cost'],
+                '\nReplacement Cost:',
+                inventory['4']['replacement cost'],
+            )
+            print()
+            revenue = input('\nWould you like to see the revenue? ')
+            print()
+            if revenue == 'yes':
+                with open('history.txt') as file:
+                    print()
+                    file_information = file.read()
+                    time.sleep(1)
+
+                    print(file_information)
+                    print('Have a blessed day', name)
+            if revenue == 'no':
+                print('Have a blessed day', name)
+
+        if employee == 'no':
+            print('Goodbye', name)
 
 
 def main():
@@ -137,9 +151,11 @@ def main():
 
     print("Welcome to Daniel's Tool Rental!")
     print()
-    print(
-        'Bussiness Hours:\n \nMon-Fri: 7:00 am to 6:00 pm \nSat: 8:00 am to 5:00 pm \nSun: Closed'
-    )
+    print('''Bussiness Hours:
+
+        Mon-Fri: 7:00 am to 6:00 pm
+        Sat: 8:00 am to 5:00 pm
+        Sun: Closed''')
     print()
     name = input("What is the name on this rental? ").strip()
     print()
@@ -147,67 +163,48 @@ def main():
     get_phone_number()
 
     while True:
-        who_are_you = input(
-            "Are you a Employee or a Customer? ").strip().title()
-
-        if who_are_you == 'Employee':
+        who_are_you = input("Are you a Customer or Employee? ").strip().title()
+        if who_are_you == 'Customer':
+            returning = input('Are you returning a tool? ').strip()
             print()
-            print('How you doing', name)
-            employee = input('\nWould you like to see the inventory? ')
-            print()
-            if employee == 'yes':
-                print()
-                print(
-                    inventory['1']['name'] + '\n' + '\n',
-                    '\nStock: ',
-                    inventory['1']['stock'],
-                    '\nRental Cost: ',
-                    inventory['1']['rental cost'],
-                    '\nReplacement Cost:',
-                    inventory['1']['replacement cost'],
-                    '\n' + inventory['2']['name'] + '\n',
-                    '\nStock: ',
-                    inventory['2']['stock'],
-                    '\nRental Cost: ',
-                    inventory['2']['rental cost'],
-                    '\nReplacement Cost:',
-                    inventory['2']['replacement cost'],
-                    '\n' + inventory['3']['name'] + '\n',
-                    '\nStock: ',
-                    inventory['3']['stock'],
-                    '\nRental Cost: ',
-                    inventory['3']['rental cost'],
-                    '\nReplacement Cost:',
-                    inventory['3']['replacement cost'],
-                    '\n' + inventory['4']['name'] + '\n',
-                    '\nStock: ',
-                    inventory['4']['stock'],
-                    '\nRental Cost: ',
-                    inventory['4']['rental cost'],
-                    '\nReplacement Cost:',
-                    inventory['4']['replacement cost'],
-                )
-                print()
-                revenue = input('\nWould you like to see the revenue? ')
-                print()
-                if revenue == 'yes':
-                    with open('history.txt') as file:
-                        print()
-                        file_information = file.read()
-                        time.sleep(1)
+            if returning == 'yes':
+                what_tool = input('What tool did you have? ')
+                if what_tool in ['Hammer', 'hammer']:
+                    inventory['1']['stock'] += 1
 
-                        print(file_information)
-                        print('Have a blessed day', name)
-                if revenue == 'no':
-                    print('Have a blessed day', name)
+                    print('\nIn-Stock: ', inventory['1']['stock'])
+                    print('\nHere is your refund for returning item ${:.2f}'.
+                          format(inventory['1']['replacement cost'] * 0.10))
+
+                elif what_tool in ['Drill', 'drill']:
+                    inventory['2']['stock'] += 1
+
+                    print('\nIn-Stock: ', inventory['2']['stock'])
+                    print('\nHere is your refund for returning item ${:.2f}'.
+                          format(inventory['2']['replacement cost'] * 0.10))
+
+                elif what_tool in [
+                        'Chop-Saw', 'Chop saw', 'Chop Saw', 'chop-saw',
+                        'chopsaw', 'chop saw'
+                ]:
+                    inventory['3']['stock'] += 1
+
+                    print('\nIn-Stock: ', inventory['3']['stock'])
+                    print('\nHere is your refund for returning item ${:.2f}'.
+                          format(inventory['3']['replacement cost'] * 0.10))
+
+                elif what_tool in [
+                        'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
+                ]:
+                    inventory['4']['stock'] += 1
+                    print('\nIn-Stock: ', inventory['4']['stock'])
+                    print('\nHere is your refund for returning item ${:.2f}'.
+                          format(inventory['4']['replacement cost'] * 0.10))
+
+                print('\t\nThank You for returning your tool!')
+                print()
+                print('\tHave a blessed day.')
                 break
-
-            if employee == 'no':
-                print('Goodbye', name)
-                break
-
-        elif who_are_you == 'Customer':
-            returning_items(inventory)
             help = input("Would you like to rent a Tool or quit? ").strip()
 
             if help in ['Quit', 'quit']:
@@ -285,6 +282,7 @@ def main():
                 if rental_rate > 5:
                     print('Can not rent for more than 5 days!')
                     break
+
                 inventory['2']['stock'] -= 1
                 print(tool, 'has a rental cost of $ 30.0 plus tax per day.')
 
@@ -414,6 +412,7 @@ def main():
                     inventory['4']['rental cost'] * 1.07 +
                     inventory['4']['replacement cost'] * 0.10 +
                     inventory['4']['rental cost'] * rental_rate))
+        employee_side(who_are_you, name, inventory)
 
 
 if __name__ == '__main__':
