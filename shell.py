@@ -1,5 +1,6 @@
 import disk
 import core
+import time
 
 
 def is_phone_number(phone_str):
@@ -91,21 +92,33 @@ def main():
             if employee == 'yes':
                 print()
                 print(
-                    inventory['1']['name'],
+                    inventory['1']['name'] + '\n' + '\n',
+                    '\nStock: ',
                     inventory['1']['stock'],
+                    '\nRental Cost: ',
                     inventory['1']['rental cost'],
+                    '\nReplacement Cost:',
                     inventory['1']['replacement cost'],
-                    inventory['2']['name'],
+                    '\n' + inventory['2']['name'] + '\n',
+                    '\nStock: ',
                     inventory['2']['stock'],
+                    '\nRental Cost: ',
                     inventory['2']['rental cost'],
+                    '\nReplacement Cost:',
                     inventory['2']['replacement cost'],
-                    inventory['3']['name'],
+                    '\n' + inventory['3']['name'] + '\n',
+                    '\nStock: ',
                     inventory['3']['stock'],
+                    '\nRental Cost: ',
                     inventory['3']['rental cost'],
+                    '\nReplacement Cost:',
                     inventory['3']['replacement cost'],
-                    inventory['4']['name'],
+                    '\n' + inventory['4']['name'] + '\n',
+                    '\nStock: ',
                     inventory['4']['stock'],
+                    '\nRental Cost: ',
                     inventory['4']['rental cost'],
+                    '\nReplacement Cost:',
                     inventory['4']['replacement cost'],
                 )
                 print()
@@ -115,8 +128,10 @@ def main():
                     with open('history.txt') as file:
                         print()
                         file_information = file.read()
+                        time.sleep(1)
 
                         print(file_information)
+                        print('Have a blessed day', name)
                 if revenue == 'no':
                     print('Have a blessed day', name)
                 break
