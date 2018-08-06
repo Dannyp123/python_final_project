@@ -1,5 +1,4 @@
-name, stock, rental cost, replacement cost
-Hammer, 17, 24.0, 34.0
-Drill, 10, 55.0, 100.0
-Saw 20, 15.0, 20.0
-Screwdriver, 18, 20.0, 25.0
+Hammer, 17, 10, 45,
+Drill, 10, 30, 100,
+Chop-Saw, 5, 115, 450,
+Screwdriver Set, 18, 26, 35

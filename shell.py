@@ -2,81 +2,21 @@ import disk
 import core
 import time
 
-# {
-#         '1': {
-#             'name': 'Hammer',
-#             'stock': 17,
-#             'rental cost': 10,
-#             'replacement cost': 45
-#         },
-#         '2': {
-#             'name': 'Drill',
-#             'stock': 10,
-#             'rental cost': 30,
-#             'replacement cost': 100
-#         },
-#         '3': {
-#             'name': 'Chop-Saw',
-#             'stock': 5,
-#             'rental cost': 115,
-#             'replacement cost': 450
-#         },
-#         '4': {
-#             'name': 'Screwdriver Set',
-#             'stock': 18,
-#             'rental cost': 26,
-#             'replacement cost': 35
-#         }
-#     }
-
-# def load_inventory():
-
-#     return inventory
-
 
 def employee_side(who_are_you, name, inventory):
     if who_are_you == '2':
         print()
         print('How you doing', name)
         print()
-        print('Type 1 for yes and 2 for no!')
-        employee = input('\nWould you like to see the inventory? ')
+        employee = input(
+            '\nWould you like to see the inventory Yes(1) or No(2)? ')
         print()
         if employee == '1':
             print()
-            print(
-                inventory['1']['name'] + '\n' + '\n',
-                '\nStock: ',
-                inventory['1']['stock'],
-                '\nRental Cost: ',
-                inventory['1']['rental cost'],
-                '\nReplacement Cost:',
-                inventory['1']['replacement cost'],
-                '\n' + inventory['2']['name'] + '\n',
-                '\nStock: ',
-                inventory['2']['stock'],
-                '\nRental Cost: ',
-                inventory['2']['rental cost'],
-                '\nReplacement Cost:',
-                inventory['2']['replacement cost'],
-                '\n' + inventory['3']['name'] + '\n',
-                '\nStock: ',
-                inventory['3']['stock'],
-                '\nRental Cost: ',
-                inventory['3']['rental cost'],
-                '\nReplacement Cost:',
-                inventory['3']['replacement cost'],
-                '\n' + inventory['4']['name'] + '\n',
-                '\nStock: ',
-                inventory['4']['stock'],
-                '\nRental Cost: ',
-                inventory['4']['rental cost'],
-                '\nReplacement Cost:',
-                inventory['4']['replacement cost'],
-            )
-            print('Type 1 for yes and 2 for no!')
+            here_is_the_inventory(inventory)
             print()
-            revenue = input('\nWould you like to see the revenue? ')
+            revenue = input(
+                '\nWould you like to see the revenue Yes(1) or No(2)? ')
             print()
             if revenue == '1':
                 with open('history.txt') as file:
@@ -93,38 +33,9 @@ def employee_side(who_are_you, name, inventory):
             print('Goodbye', name)
 
 
-def here_is_the_inventory(inventory):
-    for item in inventory.values():
-        print('\n\t{}: Stock: {} Rental Cost: {} Replacement Cost: {}'.format(
-            item['name'],
-            item['stock'],
-            item['rental cost'],
-            item['replacement cost'],
-        ))
-
-
-def load_inventory():
-    with open('inventory.txt', 'r') as file:
-        line = file.readlines()
-    inventory = {}
-    for info in line:
-        items = info.split(',')
-        tool_name = items[0].strip()
-        rental_cost = int(items[1].strip())
-        stock = int(items[2].strip())
-        replacement_cost = int(items[3].strip())
-        inventory[tool_name] = {
-            'name': tool_name,
-            'rental cost': rental_cost,
-            'stock': stock,
-            'replacement cost': replacement_cost
-        }
-    return inventory
-
-
 def main():
 
-    inventory = load_inventory()
+    inventory = disk.load_inventory()
 
     print("Welcome to Daniel's Tool Rental!")
     print()
@@ -200,7 +111,7 @@ def main():
             if help in ['R', 'r']:
                 print()
                 print('Here is our inventory:')
-                here_is_the_inventory(inventory)
+                core.here_is_the_inventory(inventory)
                 print()
             tool = input('OK, what tool would you like to rent? ').strip()
             print('\nRentals are only up to 5 days')
@@ -310,7 +221,7 @@ def main():
                     print('Can not rent for more than 5 days!')
                     break
                 inventory['Chop-Saw']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 115 plus tax per day.')
+                print(tool, 'has a rental cost of $ 115.0 plus tax per day.')
 
                 print()
                 print()
