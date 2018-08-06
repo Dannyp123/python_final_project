@@ -95,7 +95,7 @@ def employee_side(who_are_you, name, inventory):
 
 def here_is_the_inventory(inventory):
     for item in inventory.values():
-        print('\n{}: Stock: {} Rental Cost: {} Replacement Cost: {}'.format(
+        print('\n\t{}: Stock: {} Rental Cost: {} Replacement Cost: {}'.format(
             item['name'],
             item['stock'],
             item['rental cost'],
@@ -126,8 +126,6 @@ def main():
 
     inventory = load_inventory()
 
-    here_is_the_inventory(inventory)
-
     print("Welcome to Daniel's Tool Rental!")
     print()
     print('''Bussiness Hours:
@@ -144,59 +142,66 @@ def main():
             "Are you a Customer(1) or Employee(2)? ").strip().title()
         if who_are_you == '1':
             returning = input(
-                'Are you returning a tool yes(1),No(2)? ').strip()
+                '\nAre you returning a tool yes(1) or No(2)? ').strip()
             print()
             if returning == '1':
                 what_tool = input('What tool did you have? ')
                 if what_tool in ['Hammer', 'hammer']:
-                    inventory['stock'] += 1
+                    inventory['Hammer']['stock'] += 1
 
-                    print('\nIn-Stock: ', inventory['1']['stock'])
+                    print('\nIn-Stock: ', inventory['Hammer']['stock'])
                     print('\nHere is your refund for returning item ${:.2f}'.
-                          format(inventory['1']['replacement cost'] * 0.10))
+                          format(
+                              inventory['Hammer']['replacement cost'] * 0.10))
 
                 elif what_tool in ['Drill', 'drill']:
-                    inventory['2']['stock'] += 1
+                    inventory['Drill']['stock'] += 1
 
-                    print('\nIn-Stock: ', inventory['2']['stock'])
+                    print('\nIn-Stock: ', inventory['Drill']['stock'])
                     print('\nHere is your refund for returning item ${:.2f}'.
-                          format(inventory['2']['replacement cost'] * 0.10))
+                          format(
+                              inventory['Drill']['replacement cost'] * 0.10))
 
                 elif what_tool in [
                         'Chop-Saw', 'Chop saw', 'Chop Saw', 'chop-saw',
                         'chopsaw', 'chop saw'
                 ]:
-                    inventory['3']['stock'] += 1
+                    inventory['Chop-Saw']['stock'] += 1
 
-                    print('\nIn-Stock: ', inventory['3']['stock'])
-                    print('\nHere is your refund for returning item ${:.2f}'.
-                          format(inventory['3']['replacement cost'] * 0.10))
+                    print('\nIn-Stock: ', inventory['Chop-Saw']['stock'])
+                    print(
+                        '\nHere is your refund for returning item ${:.2f}'.
+                        format(
+                            inventory['Chop-Saw']['replacement cost'] * 0.10))
 
                 elif what_tool in [
                         'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
                 ]:
-                    inventory['4']['stock'] += 1
-                    print('\nIn-Stock: ', inventory['4']['stock'])
+                    inventory['Screwdriver Set']['stock'] += 1
+                    print('\nIn-Stock: ',
+                          inventory['Screwdriver Set']['stock'])
                     print('\nHere is your refund for returning item ${:.2f}'.
-                          format(inventory['4']['replacement cost'] * 0.10))
+                          format(
+                              inventory['Screwdriver Set']['replacement cost']
+                              * 0.10))
 
                 print('\t\nThank You for returning your tool!')
                 print()
                 print('\tHave a blessed day.')
                 break
             help = input(
-                "Would you like to rent a Tool or q for quit? ").strip()
+                "Would you like to rent(R) a Tool or quit(Q)? ").strip()
 
-            if help == 'q':
+            if help in ['Q', 'q']:
                 print()
                 print('Have a blessed day', name, 'Come back soon')
                 break
 
-            if help in ['rent', 'rent a tool', 'rent a Tool', 'Rent']:
+            if help in ['R', 'r']:
                 print()
                 print('Here is our inventory:')
                 here_is_the_inventory(inventory)
-
+                print()
             tool = input('OK, what tool would you like to rent? ').strip()
             print('\nRentals are only up to 5 days')
             print()
