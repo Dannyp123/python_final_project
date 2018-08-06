@@ -47,15 +47,14 @@ def main():
     print()
     name = input("What is the name on this rental? ").strip()
     print()
-    who_are_you = input(
-            "Are you a Customer(1) or Employee(2)? ").strip()
+    who_are_you = input("Are you a Customer(1) or Employee(2)? ").strip()
     while True:
         if who_are_you == '1':
-            returning = input(
-                '\nAre you returning a tool yes(1) or No(2)? ').strip()
-            print()
-            if returning == '1':
-                what_tool = input('What tool did you have? ')
+            help = input(
+                "\nWould you like to rent(R) a Tool, return(Rt) a Tool, or quit(Q)? "
+            ).strip()
+            if help in ['Rt', 'RT', 'rt', 'return']:
+                what_tool = input('\nWhat tool did you have? ')
                 if what_tool in ['Hammer', 'hammer']:
                     inventory['Hammer']['stock'] += 1
 
@@ -98,9 +97,7 @@ def main():
                 print('\t\nThank You for returning your tool!')
                 print()
                 print('\tHave a blessed day.')
-                break
-            help = input(
-                "Would you like to rent(R) a Tool or quit(Q)? ").strip()
+                continue
 
             if help in ['Q', 'q']:
                 print()
@@ -112,7 +109,7 @@ def main():
                 print('Here is our inventory:')
                 core.here_is_the_inventory(inventory)
                 print()
-            tool = input('OK, what tool would you like to rent? ').strip()
+            tool = input('\nOK, what tool would you like to rent? ').strip()
             print('\nRentals are only up to 5 days')
             print()
             print(
@@ -267,7 +264,7 @@ def main():
                     print('Can not rent for more than 5 days!')
                     break
                 inventory['Screwdriver Set']['stock'] -= 1
-                print(tool, 'has a rental cost of $ 26.0 plus tax per day.')
+                print(tool, 'has a rental cost of $ 16.0 plus tax per day.')
 
                 print()
                 print()
@@ -309,6 +306,7 @@ def main():
                     inventory['Screwdriver Set']['replacement cost'] * 0.10 +
                     inventory['Screwdriver Set']['rental cost'] * rental_rate))
         employee_side(who_are_you, name, inventory)
+        break
 
 
 if __name__ == '__main__':
