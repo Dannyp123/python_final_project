@@ -9,15 +9,15 @@ def employee_side(name, inventory):
     print()
     employee = input('\nWould you like to see the inventory Yes(Y) or No(N)? ')
     print()
-    if employee == 'Y':
+    if employee in ['Y', 'y']:
         print()
         time.sleep(1)
         core.here_is_the_inventory(inventory)
-
-        print()
+    if employee in ['N', 'n']:
+        print('Thanks for your support')
     revenue = input('\nWould you like to see the revenue Yes(Y) or No(N)? ')
     print()
-    if revenue == 'Y':
+    if revenue in ['Y', 'y']:
         with open('history.txt') as file:
             print()
             file_information = file.read()
@@ -30,7 +30,7 @@ def employee_side(name, inventory):
 def customer_side(name, inventory):
     while True:
         help = input(
-            "\nWould you like to rent(R) a Tool, return(Rt) a Tool, or quit(Q)? "
+            "\nWould you like to Rent(R) a Tool, Return(Rt) a Tool, or Quit(Q)? "
         ).strip()
         if help in ['Rt', 'RT', 'rt', 'return']:
             what_tool = input('\nWhat tool did you have? ')
@@ -103,7 +103,10 @@ def customer_side(name, inventory):
                 print('Can not rent for more than 5 days!')
                 break
             inventory['Hammer']['stock'] -= 1
-            print(tool, 'has a rental cost of $ 10.0 plus tax for one day.')
+            print(
+                tool,
+                'has a rental cost of $ 10.0 per day (Sales Tax added in total).'
+            )
 
             print()
 
@@ -126,17 +129,18 @@ def customer_side(name, inventory):
                 print('Rental Fee: ', '$',
                       inventory['Hammer']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
-                file.write('\n$' + str(
-                    round(inventory['Hammer']['rental cost'] * 1.07 +
+                file.write('\n$ ' + str(
+                    round(inventory['Hammer']['rental cost'] * 0.07 +
                           inventory['Hammer']['replacement cost'] * 0.10 +
                           inventory['Hammer']['rental cost'] * rental_rate)))
 
-            print('''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
-                  format(inventory['Hammer']['rental cost'] * 1.07,
-                         inventory['Hammer']['replacement cost'] * 0.10))
+            print(
+                '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
+                    inventory['Hammer']['rental cost'] * 0.07,
+                    inventory['Hammer']['replacement cost'] * 0.10))
 
             print('Total: ${:.2f}\n'.format(
-                inventory['Hammer']['rental cost'] * 1.07 +
+                inventory['Hammer']['rental cost'] * 0.07 +
                 inventory['Hammer']['replacement cost'] * 0.10 +
                 inventory['Hammer']['rental cost'] * rental_rate))
 
@@ -146,7 +150,10 @@ def customer_side(name, inventory):
                 break
 
             inventory['Drill']['stock'] -= 1
-            print(tool, 'has a rental cost of $ 30.0 plus tax per day.')
+            print(
+                tool,
+                'has a rental cost of $ 30.0 per day (Sales Tax added in total).'
+            )
 
             print()
             print()
@@ -167,28 +174,33 @@ def customer_side(name, inventory):
                 print('Rental Fee: ', '$',
                       inventory['Drill']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
-                file.write('\n$' + str(
-                    round(inventory['Drill']['rental cost'] * 1.07 +
+                file.write('\n$ ' + str(
+                    round(inventory['Drill']['rental cost'] * 0.07 +
                           inventory['Drill']['replacement cost'] * 0.10 +
                           inventory['Drill']['rental cost'] * rental_rate)))
 
-            print('''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
-                  format(inventory['Drill']['rental cost'] * 1.07,
-                         inventory['Drill']['replacement cost'] * 0.10))
+            print(
+                '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
+                    inventory['Drill']['rental cost'] * 0.07,
+                    inventory['Drill']['replacement cost'] * 0.10))
 
             print('Total: ${:.2f}\n'.format(
-                inventory['Drill']['rental cost'] * 1.07 +
+                inventory['Drill']['rental cost'] * 0.07 +
                 inventory['Drill']['replacement cost'] * 0.10 +
                 inventory['Drill']['rental cost'] * rental_rate))
 
         elif tool in [
-                'Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw', 'Chop Saw'
+                'Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw', 'Chop Saw',
+                'Chop-saw'
         ]:
             if rental_rate > 5:
                 print('Can not rent for more than 5 days!')
                 break
             inventory['Chop-Saw']['stock'] -= 1
-            print(tool, 'has a rental cost of $ 115.0 plus tax per day.')
+            print(
+                tool,
+                'has a rental cost of $ 115.0 per day (Sales Tax added in total).'
+            )
 
             print()
             print()
@@ -211,18 +223,19 @@ def customer_side(name, inventory):
                       inventory['Chop-Saw']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
                 file.write(
-                    '\n$' + str(
-                        round(inventory['Chop-Saw']['rental cost'] * 1.07 +
+                    '\n$ ' + str(
+                        round(inventory['Chop-Saw']['rental cost'] * 0.07 +
                               inventory['Chop-Saw']['replacement cost'] *
                               0.10 + inventory['Chop-Saw']['rental cost'] *
                               rental_rate)), )
 
-            print('''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
-                  format(inventory['Chop-Saw']['rental cost'] * 1.07,
-                         inventory['Chop-Saw']['replacement cost'] * 0.10))
+            print(
+                '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
+                    inventory['Chop-Saw']['rental cost'] * 0.07,
+                    inventory['Chop-Saw']['replacement cost'] * 0.10))
 
             print('Total: ${:.2f}\n'.format(
-                inventory['Chop-Saw']['rental cost'] * 1.07 +
+                inventory['Chop-Saw']['rental cost'] * 0.07 +
                 inventory['Chop-Saw']['replacement cost'] * 0.10 +
                 inventory['Chop-Saw']['rental cost'] * rental_rate))
 
@@ -234,7 +247,10 @@ def customer_side(name, inventory):
                 print('Can not rent for more than 5 days!')
                 break
             inventory['Screwdriver Set']['stock'] -= 1
-            print(tool, 'has a rental cost of $ 16.0 plus tax per day.')
+            print(
+                tool,
+                'has a rental cost of $ 16.0 per day (Sales Tax added in total).'
+            )
 
             print()
             print()
@@ -257,39 +273,32 @@ def customer_side(name, inventory):
                       inventory['Screwdriver Set']['rental cost'] * 5)
 
             with open('history.txt', 'a') as file:
-                file.write('\n$' + str(
-                    round(inventory['Screwdriver Set']['rental cost'] * 1.07 +
+                file.write('\n$ ' + str(
+                    round(inventory['Screwdriver Set']['rental cost'] * 0.07 +
                           inventory['Screwdriver Set']['replacement cost'] *
                           0.10 + inventory['Screwdriver Set']['rental cost'] *
                           rental_rate)))
 
-            print('''Cost plus Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
-                  format(
-                      inventory['Screwdriver Set']['rental cost'] * 1.07,
-                      inventory['Screwdriver Set']['replacement cost'] * 0.10))
+            print(
+                '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
+                    inventory['Screwdriver Set']['rental cost'] * 0.07,
+                    inventory['Screwdriver Set']['replacement cost'] * 0.10))
 
             print('Total: ${:.2f}\n'.format(
-                inventory['Screwdriver Set']['rental cost'] * 1.07 +
+                inventory['Screwdriver Set']['rental cost'] * 0.07 +
                 inventory['Screwdriver Set']['replacement cost'] * 0.10 +
                 inventory['Screwdriver Set']['rental cost'] * rental_rate))
 
 
 def main():
-
     inventory = disk.load_inventory()
-
     print("Welcome to Daniel's Tool Rental!")
     print()
-    print('''Bussiness Hours:
-
-        Mon-Fri: 7:00 am to 6:00 pm
-        Sat: 8:00 am to 5:00 pm
-        Sun: Closed''')
+    core.business_hours()
     print()
     name = input("What is the name on this rental? ").strip()
     print()
     who_are_you = input("Are you a Customer(1) or Employee(2)? ").strip()
-
     if who_are_you == '1':
         customer_side(name, inventory)
     else:
