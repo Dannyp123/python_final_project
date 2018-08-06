@@ -13,7 +13,7 @@ def employee_side(who_are_you, name, inventory):
         print()
         if employee == '1':
             print()
-            here_is_the_inventory(inventory)
+            core.here_is_the_inventory(inventory)
             print()
             revenue = input(
                 '\nWould you like to see the revenue Yes(1) or No(2)? ')
@@ -47,10 +47,9 @@ def main():
     print()
     name = input("What is the name on this rental? ").strip()
     print()
-
+    who_are_you = input(
+            "Are you a Customer(1) or Employee(2)? ").strip()
     while True:
-        who_are_you = input(
-            "Are you a Customer(1) or Employee(2)? ").strip().title()
         if who_are_you == '1':
             returning = input(
                 '\nAre you returning a tool yes(1) or No(2)? ').strip()
