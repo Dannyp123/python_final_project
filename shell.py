@@ -91,7 +91,7 @@ def customer_side(name, inventory):
         print('\nRentals are only up to 5 days')
         print()
         print(
-            "\nWith each rental, there is a 10% fee of product replacement value."
+            "\nWith each rental, there is a 10% fee of the products replacement value."
         )
         print()
         rental_rate = int(
@@ -139,7 +139,7 @@ def customer_side(name, inventory):
                     inventory['Hammer']['rental cost'] * 0.07,
                     inventory['Hammer']['replacement cost'] * 0.10))
 
-            print('Total: ${:.2f}\n'.format(
+            print('Total plus Sales Tax: ${:.2f}\n'.format(
                 inventory['Hammer']['rental cost'] * 0.07 +
                 inventory['Hammer']['replacement cost'] * 0.10 +
                 inventory['Hammer']['rental cost'] * rental_rate))
@@ -184,7 +184,7 @@ def customer_side(name, inventory):
                     inventory['Drill']['rental cost'] * 0.07,
                     inventory['Drill']['replacement cost'] * 0.10))
 
-            print('Total: ${:.2f}\n'.format(
+            print('Total plus Sales Tax: ${:.2f}\n'.format(
                 inventory['Drill']['rental cost'] * 0.07 +
                 inventory['Drill']['replacement cost'] * 0.10 +
                 inventory['Drill']['rental cost'] * rental_rate))
@@ -199,7 +199,7 @@ def customer_side(name, inventory):
             inventory['Chop-Saw']['stock'] -= 1
             print(
                 tool,
-                'has a rental cost of $ 115.0 per day (Sales Tax added in total).'
+                'has a rental cost of $ 125.0 per day (Sales Tax added in total).'
             )
 
             print()
@@ -234,7 +234,7 @@ def customer_side(name, inventory):
                     inventory['Chop-Saw']['rental cost'] * 0.07,
                     inventory['Chop-Saw']['replacement cost'] * 0.10))
 
-            print('Total: ${:.2f}\n'.format(
+            print('Total plus Sales Tax: ${:.2f}\n'.format(
                 inventory['Chop-Saw']['rental cost'] * 0.07 +
                 inventory['Chop-Saw']['replacement cost'] * 0.10 +
                 inventory['Chop-Saw']['rental cost'] * rental_rate))
@@ -284,7 +284,7 @@ def customer_side(name, inventory):
                     inventory['Screwdriver Set']['rental cost'] * 0.07,
                     inventory['Screwdriver Set']['replacement cost'] * 0.10))
 
-            print('Total: ${:.2f}\n'.format(
+            print('Total plus Sales Tax: ${:.2f}\n'.format(
                 inventory['Screwdriver Set']['rental cost'] * 0.07 +
                 inventory['Screwdriver Set']['replacement cost'] * 0.10 +
                 inventory['Screwdriver Set']['rental cost'] * rental_rate))
