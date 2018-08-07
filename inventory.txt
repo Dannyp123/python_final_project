@@ -1,4 +1,4 @@
 Hammer, 17, 10, 45,
-Drill, 10, 30, 100,
+Drill, 8, 30, 100,
 Chop-Saw, 5, 125, 450,
 Screwdriver Set, 18, 16, 35
