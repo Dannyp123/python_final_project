@@ -130,9 +130,9 @@ def customer_side(name, inventory):
                       inventory['Hammer']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
                 file.write('\n$ ' + str(
-                    round(inventory['Hammer']['rental cost'] * 0.07 +
-                          inventory['Hammer']['replacement cost'] * 0.10 +
-                          inventory['Hammer']['rental cost'] * rental_rate)))
+                    inventory['Hammer']['rental cost'] * 0.07 +
+                    inventory['Hammer']['replacement cost'] * 0.10 +
+                    inventory['Hammer']['rental cost'] * rental_rate))
 
             print(
                 '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
@@ -143,7 +143,7 @@ def customer_side(name, inventory):
                 inventory['Hammer']['rental cost'] * 0.07 +
                 inventory['Hammer']['replacement cost'] * 0.10 +
                 inventory['Hammer']['rental cost'] * rental_rate))
-
+            print('----------------------------------------------------------')
         elif tool in ['Drill', 'drill']:
             if rental_rate > 5:
                 print('Can not rent for more than 5 days!')
@@ -175,9 +175,9 @@ def customer_side(name, inventory):
                       inventory['Drill']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
                 file.write('\n$ ' + str(
-                    round(inventory['Drill']['rental cost'] * 0.07 +
-                          inventory['Drill']['replacement cost'] * 0.10 +
-                          inventory['Drill']['rental cost'] * rental_rate)))
+                    inventory['Drill']['rental cost'] * 0.07 +
+                    inventory['Drill']['replacement cost'] * 0.10 +
+                    inventory['Drill']['rental cost'] * rental_rate))
 
             print(
                 '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
@@ -188,7 +188,7 @@ def customer_side(name, inventory):
                 inventory['Drill']['rental cost'] * 0.07 +
                 inventory['Drill']['replacement cost'] * 0.10 +
                 inventory['Drill']['rental cost'] * rental_rate))
-
+            print('----------------------------------------------------------')
         elif tool in [
                 'Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw', 'Chop Saw',
                 'Chop-saw'
@@ -222,12 +222,10 @@ def customer_side(name, inventory):
                 print('Rental Fee: ', '$',
                       inventory['Chop-Saw']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
-                file.write(
-                    '\n$ ' + str(
-                        round(inventory['Chop-Saw']['rental cost'] * 0.07 +
-                              inventory['Chop-Saw']['replacement cost'] *
-                              0.10 + inventory['Chop-Saw']['rental cost'] *
-                              rental_rate)), )
+                file.write('\n$ ' + str(
+                    inventory['Chop-Saw']['rental cost'] * 0.07 +
+                    inventory['Chop-Saw']['replacement cost'] * 0.10 +
+                    inventory['Chop-Saw']['rental cost'] * rental_rate))
 
             print(
                 '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
@@ -238,6 +236,7 @@ def customer_side(name, inventory):
                 inventory['Chop-Saw']['rental cost'] * 0.07 +
                 inventory['Chop-Saw']['replacement cost'] * 0.10 +
                 inventory['Chop-Saw']['rental cost'] * rental_rate))
+            print('----------------------------------------------------------')
 
         elif tool in [
                 'Screwdriver Set', 'screwdriver set', 'screwdrivers',
@@ -274,10 +273,9 @@ def customer_side(name, inventory):
 
             with open('history.txt', 'a') as file:
                 file.write('\n$ ' + str(
-                    round(inventory['Screwdriver Set']['rental cost'] * 0.07 +
-                          inventory['Screwdriver Set']['replacement cost'] *
-                          0.10 + inventory['Screwdriver Set']['rental cost'] *
-                          rental_rate)))
+                    inventory['Screwdriver Set']['rental cost'] * 0.07 +
+                    inventory['Screwdriver Set']['replacement cost'] * 0.10 +
+                    inventory['Screwdriver Set']['rental cost'] * rental_rate))
 
             print(
                 '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
@@ -288,6 +286,7 @@ def customer_side(name, inventory):
                 inventory['Screwdriver Set']['rental cost'] * 0.07 +
                 inventory['Screwdriver Set']['replacement cost'] * 0.10 +
                 inventory['Screwdriver Set']['rental cost'] * rental_rate))
+            print('----------------------------------------------------------')
 
 
 def main():
