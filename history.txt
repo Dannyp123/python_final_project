@@ -2,3 +2,31 @@ Hammer-$ 25.2
 Drill-$ 162.1
 Chop-Saw-$ 303.75
 Screwdriver Set-$ 68.62
+
+Hammer-$ 15.2
+Drill-$ 42.1
+Hammer-$ 35.2
+Chop-Saw-$ 678.75
+Screwdriver Set-$ 84.62
+Hammer-$ 35.2
+Chop-Saw-$ 428.75
+Hammer-$ 35.2
+Chop-Saw-$ 678.75
+Hammer-$ 35.2
+Drill-$ 72.1
+Drill- $ 132.1
+Hammer- $ 25.2
+
+Hammer- $ 55.2
+Screwdriver Set- $ 68.62
+Drill- $ 132.1
+Chop-Saw- $ 428.75
+Drill- $ 42.1
+Hammer- $ 25.2
+Screwdriver Set- $ 84.62
+Hammer- $ 35.2
+Hammer- $ 35.2
+Screwdriver Set- $ 84.62
+Screwdriver Set- $ 36.62
+Drill- $ 72.1
+Hammer- $ 55.2
