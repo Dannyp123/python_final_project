@@ -1,6 +1,15 @@
 import disk
 import core
 import time
+import datetime
+
+
+def business_hours():
+    print('''Business Hours:
+    
+        Mon-Fri: 7:00 am to 5:00 pm
+        Sat: 8:00 am to 7:00 pm
+        Sun: Closed''')
 
 
 def employee_side(name, inventory):
@@ -294,7 +303,7 @@ def main():
     inventory = disk.load_inventory()
     print("Welcome to Daniel's Tool Rental!")
     print()
-    core.business_hours()
+    business_hours()
     print()
     name = input("What is the name on this rental? ").strip()
     print()
