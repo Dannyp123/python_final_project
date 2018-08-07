@@ -18,7 +18,6 @@ def employee_side(name, inventory):
     employee = input('\nWould you like to see the inventory Yes(Y) or No(N)? ')
     print()
     if employee in ['Y', 'y']:
-        print()
         time.sleep(1)
         core.here_is_the_inventory(inventory)
     if employee in ['N', 'n']:
@@ -109,51 +108,55 @@ def customer_side(name, inventory):
             if rental_rate > 5:
                 print('Can not rent for more than 5 days!')
                 break
-            inventory['Hammer']['stock'] -= 1
-            print(
-                tool,
-                'has a rental cost of $ 10.0 per day (Sales Tax added in total).'
-            )
-            print('\nRental Fee has your rental rate included.')
-            print()
-            print(
-                '-------------------------------------------------------------------------'
-            )
-            print()
-            print('In-stock: ', inventory['Hammer']['stock'])
-            print()
+            else:
+                inventory['Hammer']['stock'] -= 1
+                print(
+                    tool,
+                    'has a rental cost of $ 10.0 per day (Sales Tax added in total).'
+                )
+                print('\nRental Fee has your rental rate included.')
+                print()
+                print(
+                    '-------------------------------------------------------------------------'
+                )
+                print()
+                print('Printing Your Receipt!')
+                time.sleep(2)
+                print()
+                print('In-stock: ', inventory['Hammer']['stock'])
+                print()
 
-            if rental_rate == 1:
-                print('Rental Fee: ', '$', inventory['Hammer']['rental cost'])
-            if rental_rate == 2:
-                print('Rental Fee: ', '$',
-                      inventory['Hammer']['rental cost'] * 2)
-            if rental_rate == 3:
-                print('Rental Fee: ', '$',
-                      inventory['Hammer']['rental cost'] * 3)
-            if rental_rate == 4:
-                print('Rental Fee: ', '$',
-                      inventory['Hammer']['rental cost'] * 4)
-            if rental_rate == 5:
-                print('Rental Fee: ', '$',
-                      inventory['Hammer']['rental cost'] * 5)
-            with open('history.txt', 'a') as file:
-                file.write('\nHammer- $ ' + str(
+                if rental_rate == 1:
+                    print('Rental Fee: ', '$',
+                          inventory['Hammer']['rental cost'])
+                if rental_rate == 2:
+                    print('Rental Fee: ', '$',
+                          inventory['Hammer']['rental cost'] * 2)
+                if rental_rate == 3:
+                    print('Rental Fee: ', '$',
+                          inventory['Hammer']['rental cost'] * 3)
+                if rental_rate == 4:
+                    print('Rental Fee: ', '$',
+                          inventory['Hammer']['rental cost'] * 4)
+                if rental_rate == 5:
+                    print('Rental Fee: ', '$',
+                          inventory['Hammer']['rental cost'] * 5)
+                with open('history.txt', 'a') as file:
+                    file.write('\nHammer- $ ' + str(
+                        inventory['Hammer']['rental cost'] * 0.07 +
+                        inventory['Hammer']['replacement cost'] * 0.10 +
+                        inventory['Hammer']['rental cost'] * rental_rate))
+                print('''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.
+                      format(inventory['Hammer']['rental cost'] * 0.07,
+                             inventory['Hammer']['replacement cost'] * 0.10))
+
+                print('Total plus Sales Tax: ${:.2f}\n'.format(
                     inventory['Hammer']['rental cost'] * 0.07 +
                     inventory['Hammer']['replacement cost'] * 0.10 +
                     inventory['Hammer']['rental cost'] * rental_rate))
-            print(
-                '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
-                    inventory['Hammer']['rental cost'] * 0.07,
-                    inventory['Hammer']['replacement cost'] * 0.10))
-
-            print('Total plus Sales Tax: ${:.2f}\n'.format(
-                inventory['Hammer']['rental cost'] * 0.07 +
-                inventory['Hammer']['replacement cost'] * 0.10 +
-                inventory['Hammer']['rental cost'] * rental_rate))
-            print(
-                '-------------------------------------------------------------------------'
-            )
+                print(
+                    '-------------------------------------------------------------------------'
+                )
         elif tool in ['Drill', 'drill']:
             if rental_rate > 5:
                 print('Can not rent for more than 5 days!')
@@ -169,6 +172,8 @@ def customer_side(name, inventory):
                 '-------------------------------------------------------------------------'
             )
             print()
+            print('Printing Your Receipt!')
+            time.sleep(2)
             print()
             print('In-stock: ', inventory['Drill']['stock'])
             print()
@@ -221,6 +226,8 @@ def customer_side(name, inventory):
                 '-------------------------------------------------------------------------'
             )
             print()
+            print('Printing Your Receipt!')
+            time.sleep(2)
             print()
             print('In-stock: ', inventory['Chop-Saw']['stock'])
             print()
@@ -275,6 +282,8 @@ def customer_side(name, inventory):
                 '-------------------------------------------------------------------------'
             )
             print()
+            print('Printing Your Receipt!')
+            time.sleep(2)
             print()
             print('In-stock: ', inventory['Screwdriver Set']['stock'])
             print()
