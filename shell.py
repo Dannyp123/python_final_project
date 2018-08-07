@@ -165,6 +165,9 @@ def customer_side(name, inventory):
                 'has a rental cost of $ 30.0 per day (Sales Tax added in total).'
             )
             print('\nRental Fee has your rental rate included.')
+            print(
+                '-------------------------------------------------------------------------'
+            )
             print()
             print()
             print('In-stock: ', inventory['Drill']['stock'])
@@ -198,7 +201,9 @@ def customer_side(name, inventory):
                 inventory['Drill']['rental cost'] * 0.07 +
                 inventory['Drill']['replacement cost'] * 0.10 +
                 inventory['Drill']['rental cost'] * rental_rate))
-            print('----------------------------------------------------------')
+            print(
+                '-------------------------------------------------------------------------'
+            )
         elif tool in [
                 'Chop-Saw', 'chop-saw', 'chop saw', 'chopsaw', 'Chop Saw',
                 'Chop-saw'
@@ -212,6 +217,9 @@ def customer_side(name, inventory):
                 'has a rental cost of $ 125.0 per day (Sales Tax added in total).'
             )
             print('\nRental Fee has your rental rate included.')
+            print(
+                '-------------------------------------------------------------------------'
+            )
             print()
             print()
             print('In-stock: ', inventory['Chop-Saw']['stock'])
@@ -246,7 +254,9 @@ def customer_side(name, inventory):
                 inventory['Chop-Saw']['rental cost'] * 0.07 +
                 inventory['Chop-Saw']['replacement cost'] * 0.10 +
                 inventory['Chop-Saw']['rental cost'] * rental_rate))
-            print('----------------------------------------------------------')
+            print(
+                '-------------------------------------------------------------------------'
+            )
 
         elif tool in [
                 'Screwdriver Set', 'screwdriver set', 'screwdrivers',
@@ -261,6 +271,9 @@ def customer_side(name, inventory):
                 'has a rental cost of $ 16.0 per day (Sales Tax added in total).'
             )
             print('\nRental Fee has your rental rate included.')
+            print(
+                '-------------------------------------------------------------------------'
+            )
             print()
             print()
             print('In-stock: ', inventory['Screwdriver Set']['stock'])
@@ -296,7 +309,9 @@ def customer_side(name, inventory):
                 inventory['Screwdriver Set']['rental cost'] * 0.07 +
                 inventory['Screwdriver Set']['replacement cost'] * 0.10 +
                 inventory['Screwdriver Set']['rental cost'] * rental_rate))
-            print('----------------------------------------------------------')
+            print(
+                '-------------------------------------------------------------------------'
+            )
 
 
 def main():
