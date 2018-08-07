@@ -62,7 +62,8 @@ def customer_side(name, inventory):
                         inventory['Chop-Saw']['replacement cost'] * 0.10))
 
             elif what_tool in [
-                    'Screwdriver set', 'screwdriver set', 'Screwdriver Set'
+                    'Screwdriver set', 'screwdriver set', 'Screwdriver Set',
+                    'Screwdrivers', 'screwdrivers'
             ]:
                 inventory['Screwdriver Set']['stock'] += 1
                 print('\nIn-Stock: ', inventory['Screwdriver Set']['stock'])
@@ -129,7 +130,7 @@ def customer_side(name, inventory):
                 print('Rental Fee: ', '$',
                       inventory['Hammer']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
-                file.write('\n$ ' + str(
+                file.write('\nHammer-$ ' + str(
                     inventory['Hammer']['rental cost'] * 0.07 +
                     inventory['Hammer']['replacement cost'] * 0.10 +
                     inventory['Hammer']['rental cost'] * rental_rate))
@@ -174,7 +175,7 @@ def customer_side(name, inventory):
                 print('Rental Fee: ', '$',
                       inventory['Drill']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
-                file.write('\n$ ' + str(
+                file.write('\nDrill-$ ' + str(
                     inventory['Drill']['rental cost'] * 0.07 +
                     inventory['Drill']['replacement cost'] * 0.10 +
                     inventory['Drill']['rental cost'] * rental_rate))
@@ -222,7 +223,7 @@ def customer_side(name, inventory):
                 print('Rental Fee: ', '$',
                       inventory['Chop-Saw']['rental cost'] * 5)
             with open('history.txt', 'a') as file:
-                file.write('\n$ ' + str(
+                file.write('\nChop-Saw-$ ' + str(
                     inventory['Chop-Saw']['rental cost'] * 0.07 +
                     inventory['Chop-Saw']['replacement cost'] * 0.10 +
                     inventory['Chop-Saw']['rental cost'] * rental_rate))
@@ -272,7 +273,7 @@ def customer_side(name, inventory):
                       inventory['Screwdriver Set']['rental cost'] * 5)
 
             with open('history.txt', 'a') as file:
-                file.write('\n$ ' + str(
+                file.write('\nScrewdriver Set-$ ' + str(
                     inventory['Screwdriver Set']['rental cost'] * 0.07 +
                     inventory['Screwdriver Set']['replacement cost'] * 0.10 +
                     inventory['Screwdriver Set']['rental cost'] * rental_rate))
