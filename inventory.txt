@@ -1,3 +1,4 @@
+Name, In-stock, Rental Cost, Replacement Cost
 Hammer, 17, 10, 45,
 Drill, 8, 30, 100,
 Chop-Saw, 5, 125, 450,

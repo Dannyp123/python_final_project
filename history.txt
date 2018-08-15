@@ -1,33 +1,14 @@
-Hammer-$ 25.2
-Drill-$ 162.1
-Chop-Saw-$ 303.75
-Screwdriver Set-$ 68.62
-
-Hammer-$ 15.2
-Drill-$ 42.1
-Hammer-$ 35.2
-Chop-Saw-$ 678.75
-Screwdriver Set-$ 84.62
-Hammer-$ 35.2
-Chop-Saw-$ 428.75
-Hammer-$ 35.2
-Chop-Saw-$ 678.75
-Hammer-$ 35.2
-Drill-$ 72.1
-Drill- $ 132.1
-Hammer- $ 25.2
-
-Hammer- $ 55.2
-Screwdriver Set- $ 68.62
-Drill- $ 132.1
-Chop-Saw- $ 428.75
-Drill- $ 42.1
-Hammer- $ 25.2
-Screwdriver Set- $ 84.62
-Hammer- $ 35.2
-Hammer- $ 35.2
-Screwdriver Set- $ 84.62
-Screwdriver Set- $ 36.62
-Drill- $ 72.1
-Hammer- $ 55.2
-Drill- $ 132.1
+35.2,Hammer,rented
+678.75,Chop-Saw,rented
+162.1,Drill,rented
+0,Drill,returned
+553.75,Chop-Saw,rented
+0,Chop-Saw,returned
+45.2,Hammer,rented
+72.1,Drill,rented
+84.62,Screwdriver Set,rented
+0,Screwdriver Set,returned
+132.1,Drill,rented
+678.75,Chop-Saw,rented
+15.2,Hammer,rented
+0,Hammer,returned
