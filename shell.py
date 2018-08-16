@@ -33,7 +33,7 @@ def renting_a_tool(inventory, tool):
         if rental_rate > 5:
             print(colored('Can not rent for more than 5 days!\n', 'red'))
         else:
-            inventory[tool]['stock'] -= 1
+            core.taking_out_of_stock(inventory, tool)
             print(tool, 'has a rental cost of $',
                   inventory[tool]['rental cost'],
                   'per day (Sales Tax added in total).')
@@ -73,13 +73,13 @@ def returning_a_tool(inventory):
         if what_tool in inventory:
             total = 0
             disk.write_to_history(total, what_tool, 'returned')
-            inventory[what_tool]['stock'] += 1
+            core.adding_back_to_stock(inventory, what_tool)
             print()
             print('In-Stock:', inventory[what_tool]['stock'])
             print('\t\nThank You for returning your tool!')
             print()
             print("Here is back your Replacement Deposit {}{}".format(
-                '$', inventory[what_tool]['replacement cost'] * 0.10))
+                '$', core.replacementdeposit(inventory, what_tool)))
             print('\n\tHave a blessed day!!')
             break
         else:

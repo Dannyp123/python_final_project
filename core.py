@@ -34,3 +34,11 @@ def replacementdeposit(inventory, tool):
     replacement_deposit = (float(replacement_deposit +
                                  inventory[tool]['replacement cost'] * 0.10))
     return replacement_deposit
+
+
+def adding_back_to_stock(inventory, what_tool):
+    inventory[what_tool]['stock'] += 1
+
+
+def taking_out_of_stock(inventory, tool):
+    inventory[tool]['stock'] -= 1
