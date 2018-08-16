@@ -1,14 +1,4 @@
-35.2,Hammer,rented
-678.75,Chop-Saw,rented
-162.1,Drill,rented
-0,Drill,returned
-553.75,Chop-Saw,rented
-0,Chop-Saw,returned
 45.2,Hammer,rented
-72.1,Drill,rented
-84.62,Screwdriver Set,rented
-0,Screwdriver Set,returned
-132.1,Drill,rented
+162.1,Drill,rented
 678.75,Chop-Saw,rented
-15.2,Hammer,rented
-0,Hammer,returned
+0,Drill,returned

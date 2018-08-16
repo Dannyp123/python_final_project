@@ -49,16 +49,16 @@ def renting_a_tool(inventory, tool):
             print()
             print('In-stock: ', inventory[tool]['stock'])
             print()
-            print('Rental Fee: ', '$',
-                  inventory[tool]['rental cost'] * rental_rate)
+            print('Rental Fee: {}{}\n'.format(
+                '$', inventory[tool]['rental cost'] * rental_rate))
 
+            Sales_Tax = core.salestax(inventory, tool)
+            Replacement_Deposit = core.replacementdeposit(inventory, tool)
             total = core.totals(inventory, tool, rental_rate)
             disk.write_to_history(total, tool, 'rented')
 
-            print(
-                '''Sales Tax: ${:.2f}\nReplacement Deposit: ${:.2f}'''.format(
-                    inventory[tool]['rental cost'] * 0.07,
-                    inventory[tool]['replacement cost'] * 0.10))
+            print('Sales Tax: ${:.2f}\n'.format(Sales_Tax))
+            print('Replacement Deposit: ${:.2f}\n'.format(Replacement_Deposit))
 
             print('Total plus Sales Tax: ${:.2f}\n'.format(total))
             print(
@@ -78,8 +78,8 @@ def returning_a_tool(inventory):
             print('In-Stock:', inventory[what_tool]['stock'])
             print('\t\nThank You for returning your tool!')
             print()
-            print("Here is back your Replacement Deposit", '$',
-                  inventory[what_tool]['replacement cost'] * 0.10)
+            print("Here is back your Replacement Deposit {}{}".format(
+                '$', inventory[what_tool]['replacement cost'] * 0.10))
             print('\n\tHave a blessed day!!')
             break
         else:
@@ -96,17 +96,27 @@ def employee_side(name, inventory):
     employee = input('\nWould you like to see the inventory Yes(Y) or No(N)? ')
     print()
     if employee in ['Y', 'y']:
-        time.sleep(1)
+        print('Loading the Inventory...')
+        time.sleep(1.5)
         here_is_the_inventory(inventory)
     if employee in ['N', 'n']:
         print('Thanks for your support')
     revenue = input('\nWould you like to see the revenue Yes(Y) or No(N)? ')
     print()
     if revenue in ['Y', 'y']:
-        print('Calculating Total Revenue.\n')
+        print('Calculating Total Revenue...\n')
         time.sleep(2.5)
-        print("Total Revenue: $", disk.total_revenue())
-    print('\nSee you later', name)
+        print("Total Revenue: ${}".format(disk.total_revenue()))
+    seeing_history = input(
+        '\nWould you like to view previous transactions Yes(Y) or No(N)? ')
+    print()
+    if seeing_history in ['Y', 'y']:
+        print('Loading Previous Transactions...\n')
+        time.sleep(1.5)
+        print(disk.viewing_history())
+        print('Goodbye {}, have a great day!'.format(name))
+    if seeing_history in ['N', 'n']:
+        print('\nOk, glad I could assist you, see you later', name)
 
 
 def customer_side(name, inventory):

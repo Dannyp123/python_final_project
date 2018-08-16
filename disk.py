@@ -1,6 +1,12 @@
 import core
 
 
+def viewing_history():
+    with open('history.txt', 'r') as file:
+        lines = file.read()
+    return lines
+
+
 def load_inventory(file_name):
     with open(file_name, 'r') as file:
         file.readline()

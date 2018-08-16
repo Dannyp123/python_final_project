@@ -21,3 +21,16 @@ def totals(inventory, tool, rental_rate):
                    inventory[tool]['replacement cost'] * 0.10 +
                    inventory[tool]['rental cost'] * rental_rate))
     return total
+
+
+def salestax(inventory, tool):
+    sales_tax = 0
+    sales_tax = (float(sales_tax + inventory[tool]['rental cost'] * 0.07))
+    return sales_tax
+
+
+def replacementdeposit(inventory, tool):
+    replacement_deposit = 0
+    replacement_deposit = (float(replacement_deposit +
+                                 inventory[tool]['replacement cost'] * 0.10))
+    return replacement_deposit
