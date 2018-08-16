@@ -2,8 +2,10 @@ import core
 
 
 def viewing_history():
+    lines = ''
     with open('history.txt', 'r') as file:
-        lines = file.read()
+        for line in file:
+            lines = lines + line + '\n'
     return lines
 
 

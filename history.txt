@@ -38,3 +38,28 @@
 25.2,Hammer,rented
 830.85,Chop-Saw,rented
 0,Drill,returned
+86.25,Drill,rented
+243.65,Air Compressor,rented
+0,Air Compressor,returned
+55.2,Hammer,rented
+0,Hammer,returned
+111.25,Drill,rented
+243.65,Air Compressor,rented
+830.85,Chop-Saw,rented
+830.85,Chop-Saw,rented
+0,Chop-Saw,returned
+136.25,Drill,rented
+243.65,Air Compressor,rented
+830.85,Chop-Saw,rented
+0,Drill,returned
+520.85,Chop-Saw,rented
+0,Chop-Saw,returned
+55.2,Hammer,rented
+675.85,Chop-Saw,rented
+55.2,Hammer,rented
+243.65,Air Compressor,rented
+830.85,Chop-Saw,rented
+0,Chop-Saw,returned
+55.2,Hammer,rented
+45.2,Hammer,rented
+0,Hammer,returned
