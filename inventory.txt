@@ -1,5 +1,5 @@
 Name, In-stock, Rental Cost, Replacement Cost
-Hammer, 17, 10, 45,
-Drill, 10, 25, 95,
-Chop-Saw, 5, 155, 450,
-Air Compressor, 6, 45, 155
+Hammer,12,10,45
+Drill,7,25,95
+Chop-Saw,6,155,450
+Air Compressor,5,45,155

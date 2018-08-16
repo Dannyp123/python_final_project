@@ -63,3 +63,55 @@
 55.2,Hammer,rented
 45.2,Hammer,rented
 0,Hammer,returned
+830.85,Chop-Saw,rented
+0,Chop-Saw,returned
+35.2,Hammer,rented
+45.2,Hammer,rented
+35.2,Hammer,rented
+45.2,Hammer,rented
+86.25,Drill,rented
+35.2,Hammer,rented
+111.25,Drill,rented
+45.2,Hammer,rented
+35.2,Hammer,rented
+35.2,Hammer,rented
+35.2,Hammer,rented
+55.2,Hammer,rented
+45.2,Hammer,rented
+35.2,Hammer,rented
+61.25,Drill,rented
+243.65,Air Compressor,rented
+830.85,Chop-Saw,rented
+0,Air Compressor,returned
+111.25,Drill,rented
+55.2,Hammer,rented
+830.85,Chop-Saw,rented
+35.2,Hammer,rented
+0,Hammer,returned
+830.85,Chop-Saw,rented
+210.85,Chop-Saw,rented
+210.85,Chop-Saw,rented
+55.2,Hammer,rented
+675.85,Chop-Saw,rented
+675.85,Chop-Saw,rented
+675.85,Chop-Saw,rented
+675.85,Chop-Saw,rented
+675.85,Chop-Saw,rented
+520.85,Chop-Saw,rented
+675.85,Chop-Saw,rented
+675.85,Chop-Saw,rented
+675.85,Chop-Saw,rented
+210.85,Chop-Saw,rented
+675.85,Chop-Saw,rented
+111.25,Drill,rented
+243.65,Air Compressor,rented
+55.2,Hammer,rented
+0,Chop-Saw,returned
+0,Chop-Saw,returned
+0,Chop-Saw,returned
+0,Chop-Saw,returned
+0,Chop-Saw,returned
+0,Chop-Saw,returned
+198.65,Air Compressor,rented
+45.2,Hammer,rented
+0,Air Compressor,returned

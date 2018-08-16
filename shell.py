@@ -44,6 +44,7 @@ def renting_a_tool(inventory, tool):
             print(colored('Can not rent for more than 5 days!\n', 'red'))
         else:
             taking_out_of_stock(inventory, tool)
+
             print(
                 'A {} has a rental cost of ${} per day (Sales Tax included in total)'.
                 format(tool, inventory[tool]['rental cost']))
@@ -70,7 +71,7 @@ def renting_a_tool(inventory, tool):
             print('Sales Tax: ${:.2f}'.format(Sales_Tax))
             print('Replacement Deposit: ${:.2f}'.format(Replacement_Deposit))
 
-            print('Total plus Sales Tax: ${:.2f}'.format(total))
+            print('Total including Sales Tax: ${:.2f}'.format(total))
             print(
                 '-------------------------------------------------------------------------'
             )
@@ -111,7 +112,7 @@ def employee_side(name, inventory):
     if employee in ['N', 'n']:
         print('Thanks for your support')
     revenue = input(
-        '\nWould you like to see the revenue Yes(Y) or No(N)? ').strip()
+        '\nWould you like to see the Total Revenue Yes(Y) or No(N)? ').strip()
     if revenue in ['Y', 'y']:
         print('Calculating Total Revenue...\n')
         time.sleep(2.5)
@@ -126,6 +127,15 @@ def employee_side(name, inventory):
         print('Goodbye {}, have a great day!'.format(name))
     if seeing_history in ['N', 'n']:
         print('\nOk, glad I could assist you, see you later', name)
+
+
+def input_tool(inventory):
+    while True:
+        choice = input('\nWhat tool would you like to rent? ').title().strip()
+        if choice in inventory and inventory[choice]['stock'] > 0:
+            return choice
+        else:
+            print('Sorry!! Currently not available!')
 
 
 def customer_side(name, inventory):
@@ -146,7 +156,7 @@ def customer_side(name, inventory):
             time.sleep(1)
             here_is_the_inventory(inventory)
             print()
-        tool = input('\nWhat tool would you like to rent? ').strip().title()
+        tool = input_tool(inventory)
         print('\nRentals are only up to 5 days\n')
         print(
             "\nWith each rental, there is a 10% fee of the products replacement value."
@@ -169,6 +179,7 @@ def main():
         customer_side(name, inventory)
     else:
         employee_side(name, inventory)
+    disk.writing_to_inventory(inventory)
 
 
 if __name__ == '__main__':

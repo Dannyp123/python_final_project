@@ -24,7 +24,7 @@ def test_loading_inventory():
 
 def test_rental_sales():
     rental_rate = 4
-    result = core.totals(fake_dict, 'Hammer', rental_rate)
+    result = core.rental_sales(fake_dict, 'Hammer', rental_rate)
     assert result == 45.2
 
 

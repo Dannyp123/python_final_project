@@ -9,6 +9,16 @@ def viewing_history():
     return lines
 
 
+def writing_to_inventory(inventory):
+    with open('inventory.txt', 'w') as file:
+        file.write('Name, In-stock, Rental Cost, Replacement Cost\n')
+        for item in inventory.values():
+            line = '{},{},{},{}\n'.format(item['name'], item['stock'],
+                                          item['rental cost'],
+                                          item['replacement cost'])
+            file.write(line)
+
+
 def load_inventory(file_name):
     with open(file_name, 'r') as file:
         file.readline()
