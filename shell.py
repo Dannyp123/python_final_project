@@ -13,6 +13,14 @@ def business_hours():
         Sun: Closed''')
 
 
+def adding_back_to_stock(inventory, what_tool):
+    inventory[what_tool]['stock'] += 1
+
+
+def taking_out_of_stock(inventory, tool):
+    inventory[tool]['stock'] -= 1
+
+
 def here_is_the_inventory(inventory):
     for item in inventory.values():
         print(
@@ -33,7 +41,7 @@ def renting_a_tool(inventory, tool):
         if rental_rate > 5:
             print(colored('Can not rent for more than 5 days!\n', 'red'))
         else:
-            core.taking_out_of_stock(inventory, tool)
+            taking_out_of_stock(inventory, tool)
             print(
                 'A {} has a rental cost of ${} per day (Sales Tax included in total)'.
                 format(tool, inventory[tool]['rental cost']))
@@ -49,18 +57,18 @@ def renting_a_tool(inventory, tool):
             print()
             print('In-stock: ', inventory[tool]['stock'])
             print()
-            print('Rental Fee: {}{}\n'.format(
+            print('Rental Fee: {}{}'.format(
                 '$', inventory[tool]['rental cost'] * rental_rate))
 
             Sales_Tax = core.salestax(inventory, tool)
             Replacement_Deposit = core.replacementdeposit(inventory, tool)
-            total = core.totals(inventory, tool, rental_rate)
+            total = core.rental_sales(inventory, tool, rental_rate)
             disk.write_to_history(total, tool, 'rented')
 
-            print('Sales Tax: ${:.2f}\n'.format(Sales_Tax))
-            print('Replacement Deposit: ${:.2f}\n'.format(Replacement_Deposit))
+            print('Sales Tax: ${:.2f}'.format(Sales_Tax))
+            print('Replacement Deposit: ${:.2f}'.format(Replacement_Deposit))
 
-            print('Total plus Sales Tax: ${:.2f}\n'.format(total))
+            print('Total plus Sales Tax: ${:.2f}'.format(total))
             print(
                 '-------------------------------------------------------------------------'
             )
@@ -73,7 +81,7 @@ def returning_a_tool(inventory):
         if what_tool in inventory:
             total = 0
             disk.write_to_history(total, what_tool, 'returned')
-            core.adding_back_to_stock(inventory, what_tool)
+            adding_back_to_stock(inventory, what_tool)
             print()
             print('In-Stock:', inventory[what_tool]['stock'])
             print('\t\nThank You for returning your tool!')

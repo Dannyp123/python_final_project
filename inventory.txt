@@ -1,5 +1,5 @@
 Name, In-stock, Rental Cost, Replacement Cost
 Hammer, 17, 10, 45,
-Drill, 8, 30, 100,
-Chop-Saw, 5, 125, 450,
-Screwdriver Set, 18, 16, 35
+Drill, 10, 25, 95,
+Chop-Saw, 5, 155, 450,
+Air Compressor, 6, 45, 155

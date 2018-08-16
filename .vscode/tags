@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+business_hours	../shell.py	/^def business_hours():$/;"	kind:function	line:6
+core.py	../core.py	1;"	kind:file	line:1
+customer_side	../shell.py	/^def customer_side(name, inventory):$/;"	kind:function	line:120
+disk.py	../disk.py	1;"	kind:file	line:1
+employee_side	../shell.py	/^def employee_side(name, inventory):$/;"	kind:function	line:102
+here_is_the_inventory	../disk.py	/^def here_is_the_inventory(inventory):$/;"	kind:function	line:8
+load_inventory	../disk.py	/^def load_inventory(file_name):$/;"	kind:function	line:1
+loading_inventory	../core.py	/^def loading_inventory(line):$/;"	kind:function	line:18
+main	../shell.py	/^def main():$/;"	kind:function	line:151
+renting_a_tool	../shell.py	/^def renting_a_tool(inventory, tool):$/;"	kind:function	line:38
+returning_a_tool	../shell.py	/^def returning_a_tool(inventory):$/;"	kind:function	line:87
+shell.py	../shell.py	1;"	kind:file	line:1
+test_core.py	../test_core.py	1;"	kind:file	line:1
+total_revenue	../shell.py	/^def total_revenue():$/;"	kind:function	line:29
+totals	../shell.py	/^def totals(inventory, tool, rental_rate):$/;"	kind:function	line:19
+write_to_history	../shell.py	/^def write_to_history(total):$/;"	kind:function	line:14
