@@ -34,9 +34,9 @@ def renting_a_tool(inventory, tool):
             print(colored('Can not rent for more than 5 days!\n', 'red'))
         else:
             core.taking_out_of_stock(inventory, tool)
-            print(tool, 'has a rental cost of $',
-                  inventory[tool]['rental cost'],
-                  'per day (Sales Tax added in total).')
+            print(
+                'A {} has a rental cost of ${} per day (Sales Tax included in total)'.
+                format(tool, inventory[tool]['rental cost']))
 
             print('\nRental Fee has your rental rate included.\n')
             print('Printing Your Receipt!')
