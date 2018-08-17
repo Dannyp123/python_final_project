@@ -47,6 +47,15 @@ def printing_receipt(inventory, tool, rental_rate, Sales_Tax,
     )
 
 
+def input_tool(inventory):
+    while True:
+        choice = input('\nWhat tool would you like to rent? ').title().strip()
+        if choice in inventory and inventory[choice]['stock'] > 0:
+            return choice
+        else:
+            print(colored('\nSorry!! Currently not available!', 'red'))
+
+
 def renting_a_tool(inventory, tool):
     while True:
         rental_rate = int(
@@ -102,12 +111,11 @@ def returning_a_tool(inventory):
             print(
                 colored(
                     '\nYou did not rent that from us, you sure you are at the right place?',
-                    'red',
-                    attrs=['blink']))
+                    'red'))
 
 
 def employee_side(name, inventory):
-    print('How you doing', name)
+    print('\nHow you doing', name)
     employee = input(
         '\nWould you like to see the inventory Yes(Y) or No(N)? ').strip()
     print()
@@ -142,15 +150,6 @@ def employee_side(name, inventory):
         print('\nOk, glad I could assist you, see you later', name)
 
 
-def input_tool(inventory):
-    while True:
-        choice = input('\nWhat tool would you like to rent? ').title().strip()
-        if choice in inventory and inventory[choice]['stock'] > 0:
-            return choice
-        else:
-            print('Sorry!! Currently not available!')
-
-
 def customer_side(name, inventory):
     while True:
         help = input(
@@ -180,7 +179,7 @@ def customer_side(name, inventory):
 
 
 def main():
-    inventory = disk.load_inventory('inventory.txt')
+    inventory = disk.load_inventory()
     inventory = core.loading_inventory(inventory)
     print()
     business_hours()
