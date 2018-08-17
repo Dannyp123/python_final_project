@@ -3,8 +3,8 @@ def loading_inventory(line):
     for info in line:
         items = info.split(',')
         tool_name = items[0].strip()
-        rental_cost = int(items[2].strip())
         stock = int(items[1].strip())
+        rental_cost = int(items[2].strip())
         replacement_cost = int(items[3].strip())
         inventory[tool_name] = {
             'name': tool_name,

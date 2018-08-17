@@ -56,13 +56,13 @@ def input_tool(inventory):
             print(colored('\nSorry!! Currently not available!', 'red'))
 
 
-def renting_a_tool(inventory, tool):
+def renting_a_tool(inventory, tool, name):
     while True:
         rental_rate = int(
             input('How many days do you want to rent a tool for? '))
         print()
-        if rental_rate > 5:
-            print(colored('Can not rent for more than 5 days!\n', 'red'))
+        if rental_rate > 14:
+            print(colored('Can not rent for more than 14 days!\n', 'red'))
         else:
             taking_out_of_stock(inventory, tool)
 
@@ -74,18 +74,16 @@ def renting_a_tool(inventory, tool):
             print('Printing Your Receipt!')
             time.sleep(2)
             print(
-                '-------------------------------------------------------------------------'
+                '-------------------------------------------------------------------------\n'
             )
-            print()
 
-            print()
-            print('In-stock: ', inventory[tool]['stock'])
+            print('\nIn-stock: ', inventory[tool]['stock'])
             print()
 
             Sales_Tax = core.salestax(inventory, tool)
             Replacement_Deposit = core.replacementdeposit(inventory, tool)
             total = core.rental_sales(inventory, tool, rental_rate)
-            disk.write_to_history(total, tool, 'rented')
+            disk.write_to_history(total, tool, 'rented', name, rental_rate)
 
             printing_receipt(inventory, tool, rental_rate, Sales_Tax,
                              Replacement_Deposit, total)
@@ -93,17 +91,17 @@ def renting_a_tool(inventory, tool):
             break
 
 
-def returning_a_tool(inventory):
+def returning_a_tool(inventory, name):
     while True:
         what_tool = input('\nWhat tool did you have? ').title().strip()
         if what_tool in inventory:
             total = 0
-            disk.write_to_history(total, what_tool, 'returned')
+            disk.write_to_history(total, what_tool, 'returned', name)
             adding_back_to_stock(inventory, what_tool)
             print()
             print('In-Stock:', inventory[what_tool]['stock'])
             print('\t\nThank You for returning your tool!\n')
-            print("Here is back your Replacement Deposit {}{}".format(
+            print("Here is back your Replacement Deposit {}{:.2f}".format(
                 '$', core.replacementdeposit(inventory, what_tool)))
             print('\n\tHave a blessed day!!')
             break
@@ -116,22 +114,22 @@ def returning_a_tool(inventory):
 
 def employee_side(name, inventory):
     print('\nHow you doing', name)
-    employee = input(
+    seeing_inventory = input(
         '\nWould you like to see the inventory Yes(Y) or No(N)? ').strip()
     print()
 
-    if employee in ['Y', 'y']:
+    if seeing_inventory in ['Y', 'y']:
         print('Loading the Inventory...')
         time.sleep(1.5)
         here_is_the_inventory(inventory)
 
-    if employee in ['N', 'n']:
+    if seeing_inventory in ['N', 'n']:
         print('Thanks for your support')
 
-    revenue = input(
+    total_revenue = input(
         '\nWould you like to see the Total Revenue Yes(Y) or No(N)? ').strip()
 
-    if revenue in ['Y', 'y']:
+    if total_revenue in ['Y', 'y']:
         print('Calculating Total Revenue...\n')
         time.sleep(2.5)
         print("Total Revenue: ${}".format(disk.total_revenue()))
@@ -142,7 +140,7 @@ def employee_side(name, inventory):
 
     if seeing_history in ['Y', 'y']:
         print('Loading Previous Transactions...\n')
-        time.sleep(1.5)
+        time.sleep(2.0)
         print(disk.viewing_history())
         print('Goodbye {}, have a great day!'.format(name))
 
@@ -156,7 +154,7 @@ def customer_side(name, inventory):
             "\nWould you like to Rent(R) a Tool, Return(Rt) a Tool, or Quit(Q)? "
         ).strip()
         if help in ['Rt', 'rt', 'rT']:
-            returning_a_tool(inventory)
+            returning_a_tool(inventory, name)
             break
         if help in ['Q', 'q']:
             print()
@@ -169,13 +167,13 @@ def customer_side(name, inventory):
             here_is_the_inventory(inventory)
             print()
         tool = input_tool(inventory)
-        print('\nRentals are only up to 5 days\n')
+        print('\nRentals are only up to 14 days\n')
         print(
             "\nWith each rental, there is a 10% fee of the products replacement value."
         )
         print()
 
-        renting_a_tool(inventory, tool)
+        renting_a_tool(inventory, tool, name)
 
 
 def main():

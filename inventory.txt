@@ -1,9 +1,9 @@
 Name, In-stock, Rental Cost, Replacement Cost
-Hammer,15,10,45
-Drill,8,25,95
-Chop-Saw,5,155,450
-Air Compressor,4,145,220
-Level,13,10,25
-Nail Gun,5,115,325
-Extension Ladder,7,450,1200
-Staple Gun,22,15,38
+Hammer, 11, 10, 45
+Drill, 8, 25, 95
+Level, 7, 10, 25
+Chop-Saw, 5, 125, 250
+Air Compressor, 2, 145, 220
+Nail Gun, 4, 115, 325
+Extension Ladder, 3, 275, 850
+Staple Gun, 18, 15, 38

@@ -13,22 +13,22 @@ def writing_to_inventory(inventory):
     with open('inventory.txt', 'w') as file:
         file.write('Name, In-stock, Rental Cost, Replacement Cost\n')
         for item in inventory.values():
-            line = '{},{},{},{}\n'.format(item['name'], item['stock'],
-                                          item['rental cost'],
-                                          item['replacement cost'])
+            line = '{}, {}, {}, {}\n'.format(item['name'], item['stock'],
+                                             item['rental cost'],
+                                             item['replacement cost'])
             file.write(line)
 
 
-def load_inventory(file_name):
-    with open(file_name, 'r') as file:
+def load_inventory():
+    with open('inventory.txt', 'r') as file:
         file.readline()
         line = file.readlines()
     return line
 
 
-def write_to_history(total, tool, type):
+def write_to_history(total, tool, type, name):
     with open('history.txt', 'a') as file:
-        file.write(str(total) + ',' + tool + ',' + type + '\n')
+        file.write(str(total) + ', ' + name + ', ' + type + ', ' + tool + '\n')
 
 
 def total_revenue():
